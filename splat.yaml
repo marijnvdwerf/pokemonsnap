@@ -430,12 +430,14 @@ segments:
       - [0x64280, bin] # , data]
       - { start: auto, name: bss_800F5A00, type: bss, vram: 0x800F5A00 }
   - type: code
+    dir: magikarp
     start: 0x731B0
     vram: 0x800F5D90
     exclusive_ram_id: unk800F5D90
     subsegments:
       - [0x731B0, bin] # , data]
   - type: code
+    name: pikachu
     start: 0x7D3B0
     vram: 0x800FFF90
     exclusive_ram_id: unk800FFF90
@@ -448,8 +450,9 @@ segments:
     subsegments:
       - [0x98470, bin] # , data]
   - type: code
+    dir: bulbasaur
     start: 0x99F70
-    vram: 0x8011B050
+    vram: 0x8011CB50
     exclusive_ram_id: unk8011B050
     subsegments:
       - [0x99F70, bin] # , data]
@@ -464,7 +467,7 @@ segments:
       - { start: auto, name: bss_801B02F0, type: bss, vram: 0x801B02F0 }
   - type: code
     start: 0x13C780
-    vram: 0x8011CB50
+    vram: 0x801B0310
     exclusive_ram_id: unk8011CB50
     subsegments:
       - [0x13C780, bin] # , data]
@@ -602,7 +605,7 @@ segments:
       - [0x554130, bin] # , data]
   - type: code
     start: 0x557050
-    vram: 0x80344780
+    vram: 0x8033F6C0
     exclusive_ram_id: unk80344780
     subsegments:
       - [0x557050, bin] # , data]
@@ -900,7 +903,7 @@ segments:
   - name: unk_end_level_8
     type: code
     start: 0xA084B0
-    vram: 0x800E1970
+    vram: 0x801DC8C0
     bss_size: 0x32020
     exclusive_ram_id: level
     subsegments:
@@ -972,7 +975,30 @@ segments:
       - [0xAA20A0, bin] # , data]
       - { start: auto, name: bss_801E55D0, type: bss, vram: 0x801E55D0 }
 
+    # DMA'd
   - [0xAAA610, bin] # compressed data
+  - [0xAAA660, bin, dmaWrapper-0xAAA660]
+  - [0xAB1470, bin, dmaWrapper-0xAB1470]
+  - [0xAB5860, bin, dmaWrapper-0xAB5860]
+  - [0xAB5980, bin, dmaWrapper-0xAB5980]
+  - [0xAB85E0, bin, dmaWrapper-0xAB85E0]
+  - [0xAB8780, bin, dmaWrapper-0xAB8780]
+  - [0xABE7A0, bin, dmaWrapper-0xABE7A0]
+  - [0xABEBD0, bin, dmaWrapper-0xABEBD0]
+  - [0xAC6890, bin, dmaWrapper-0xAC6890]
+  - [0xAC6A80, bin, dmaWrapper-0xAC6A80]
+  - [0xAC8510, bin, dmaWrapper-0xAC8510]
+  - [0xAC8830, bin, dmaWrapper-0xAC8830]
+  - [0xACF6F0, bin, dmaWrapper-0xACF6F0]
+  - [0xACF9A0, bin, dmaWrapper-0xACF9A0]
+  - [0xAD0E00, bin, dmaWrapper-0xAD0E00]
+  - [0xAD1640, bin, dmaWrapper-0xAD1640]
+  - [0xADD310, bin, dmaWrapper-0xADD310]
+  - [0xADD5D0, bin, dmaWrapper-0xADD5D0]
+  - [0xADEC60, bin, dmaWrapper-0xADEC60]
+  - [0xADEDF0, bin, dmaWrapper-0xADEDF0]
+
+  - [0xAE0510, bin] # no idea
 
   # Sequences
   - [0xAEFD3C, bin, audio/seq/AEFD3C]
