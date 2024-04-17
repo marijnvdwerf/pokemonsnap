@@ -197,3 +197,45 @@
 #pragma GLOBAL_ASM("asm/nonmatchings/8A80/func_8000AFFC.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/8A80/func_8000B0F8.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043280.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800432A0.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800432C4.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800432E4.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043300.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043318.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043334.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_8004334C.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043364.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_8004337C.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043394.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800433B0.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800433DC.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043404.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043430.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043454.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043478.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800434B0.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_800434E8.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_8004352C.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/8A80/D_80043568.s")

@@ -12,6 +12,7 @@ options:
   ld_symbol_header_path: build/include/ld_addrs.h
   symbol_addrs_path: tools/symbol_addrs.txt
   symbol_name_format: $VRAM_$ROM
+  rodata_string_guesser_level: 0
 segments:
   - [0x000000, header, header]
   - [0x000040, bin, boot]
@@ -391,14 +392,8 @@ segments:
       - [0x568D0, c]
       - [0x574F0, c]
       - [0x57580, data]
-      - [0x5AD90, data]
-      - [0x5B850, .rodata, 47380]
-      - [0x5BB30, .rodata, 4B670]
-      - [0x5BBF0, .rodata, 4D400]
-      - [0x5BC10, .rodata, 4D880]
-      - [0x5BEB0, .rodata, 52DE0]
-      - [0x5BEE0, .rodata, 53AD0]
-      - [0x5BF10, .rodata, 568D0]
+      - [0x579D0, .rodata, '46270']
+      - [0x57A70, rodata]
       - { start: auto, name: bss_800B0570, type: bss, vram: 0x800B0570 }
   - name: more_funcs
     type: code
@@ -430,6 +425,7 @@ segments:
       - [0x64280, bin] # , data]
       - { start: auto, name: bss_800F5A00, type: bss, vram: 0x800F5A00 }
   - type: code
+    name: magikarp1
     dir: magikarp
     start: 0x731B0
     vram: 0x800F5D90
@@ -437,19 +433,23 @@ segments:
     subsegments:
       - [0x731B0, bin] # , data]
   - type: code
-    name: pikachu
+    name: pikachu1
+    dir: pikachu
     start: 0x7D3B0
     vram: 0x800FFF90
     exclusive_ram_id: unk800FFF90
     subsegments:
       - [0x7D3B0, bin] # , data]
   - type: code
+    name: zubat1
+    dir: zubat
     start: 0x98470
     vram: 0x8011B050
     exclusive_ram_id: unk8011B050
     subsegments:
       - [0x98470, bin] # , data]
   - type: code
+    name: bulbasaur1
     dir: bulbasaur
     start: 0x99F70
     vram: 0x8011CB50
@@ -466,6 +466,7 @@ segments:
       - [0xA74F0, bin] # , data]
       - { start: auto, name: bss_801B02F0, type: bss, vram: 0x801B02F0 }
   - type: code
+    name: stage0_extra
     start: 0x13C780
     vram: 0x801B0310
     exclusive_ram_id: unk8011CB50
@@ -481,6 +482,7 @@ segments:
       - [0x162CC0, bin] # , data]
       - { start: auto, name: bss_8018BC30, type: bss, vram: 0x8018BC30 }
   - type: code
+    name: stage1_extra
     start: 0x1D1D90
     vram: 0x8018BC50
     exclusive_ram_id: unk1D1D90
@@ -496,6 +498,7 @@ segments:
       - [0x1F5E80, bin] # , data]
       - { start: auto, name: bss_801AEDD0, type: bss, vram: 0x801AEDD0 }
   - type: code
+    name: stage4_extra
     start: 0x27AB80
     vram: 0x801AEDF0
     exclusive_ram_id: unk27AB80
@@ -511,6 +514,7 @@ segments:
       - [0x29A1A0, bin] # , data]
       - { start: auto, name: bss_8019AEC0, type: bss, vram: 0x8019AEC0 }
   - type: code
+    name: stage3_extra
     start: 0x30AF90
     vram: 0x8019AEE0
     exclusive_ram_id: unk30AF90
@@ -526,6 +530,7 @@ segments:
       - [0x326C20, bin] # , data]
       - { start: auto, name: bss_801A98E0, type: bss, vram: 0x801A98E0 }
   - type: code
+    name: stage2_extra
     start: 0x3D0560
     vram: 0x801A9900
     exclusive_ram_id: unk3D0560
@@ -542,6 +547,7 @@ segments:
     # - { start: auto, name: bss_80186AF0, type: bss, vram: 0x80186AF0 }
   - [0x3F63E0, bin] # todo comment out above and remove this
   - type: code
+    name: stage5_extra
     start: 0x47CF30
     vram: 0x80186B10
     exclusive_ram_id: unk47CF30
@@ -558,6 +564,7 @@ segments:
     # - { start: auto, name: bss_80139C30, type: bss, vram: 0x80139C30 }
   - [0x4A8170, bin] # todo comment out above and remove this
   - type: code
+    name: stage6_extra
     start: 0x4EC000
     vram: 0x80139C50
     exclusive_ram_id: unk4EC000
@@ -780,24 +787,32 @@ segments:
       - [0x82A280, bin] # , data]
       - { start: auto, name: bss_80350170, type: bss, vram: 0x80350170 }
   - type: code
+    name: magikarp2
+    dir: magikarp
     start: 0x82F8E0
     vram: 0x803B1F80
     exclusive_ram_id: unk82F8E0
     subsegments:
       - [0x82F8E0, bin] # , data]
   - type: code # follows the seg before this in memory
+    name: pikachu2
+    dir: pikachu
     start: 0x832960
     vram: 0x803AD580
     exclusive_ram_id: unk832960
     subsegments:
       - [0x832960, bin] # , data]
   - type: code # follows the seg before this in memory
+    name: zubat2
+    dir: zubat
     start: 0x837360
     vram: 0x803AA700
     exclusive_ram_id: unk837360
     subsegments:
       - [0x837360, bin] # , data]
   - type: code # follows the seg before this in memory
+    name: bulbasaur2
+    dir: bulbasaur
     start: 0x83A1E0
     vram: 0x803A71B0
     exclusive_ram_id: unk83A1E0
