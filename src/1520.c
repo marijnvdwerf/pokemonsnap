@@ -138,8 +138,8 @@ void load_overlay(Overlay* dmaData) {
     }
 }
 
-void dma_rom_read(u32 romSrc, void* ramDst, u32 nbytes) {
-    func_80002A10(D_800488A0, romSrc, ramDst, nbytes, OS_READ);
+void dma_rom_read(void* romSrc, void* ramDst, u32 nbytes) {
+    func_80002A10(D_800488A0, (u32)romSrc, (u32)ramDst, nbytes, OS_READ);
 }
 
 void func_80002C5C(u32 dramAddr, u32 devAddr, u32 numBytes) {
