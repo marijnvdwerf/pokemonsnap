@@ -1,0 +1,2 @@
+- remember to test and run your changes before telling me you're done
+- I use `uv` for running python stuff

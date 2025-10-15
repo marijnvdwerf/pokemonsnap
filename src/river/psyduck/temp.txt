@@ -1,0 +1,39 @@
+
+mon9_tex_80167418 = 0x80167418; // segment:river_code
+mon9_tex_80167620_png = 0x80167620; // segment:river_code
+mon9_tex_80167C28 = 0x80167C28; // segment:river_code
+mon9_tex_80167C50_png = 0x80167C50; // segment:river_code
+mon9_tex_80167DD8 = 0x80167DD8; // segment:river_code
+mon9_tex_80168DE0 = 0x80168DE0; // segment:river_code
+mon9_tex_80168FE8_png = 0x80168FE8; // segment:river_code
+
+mon8_tex_80170538 = 0x80170538; // segment:river_code
+mon8_tex_80170550_png = 0x80170550; // segment:river_code
+mon8_tex_80170758 = 0x80170758; // segment:river_code
+mon8_tex_80170780_png = 0x80170780; // segment:river_code
+mon8_tex_80170B88 = 0x80170B88; // segment:river_code
+mon8_tex_80170BB0_png = 0x80170BB0; // segment:river_code
+mon8_tex_80170DB8 = 0x80170DB8; // segment:river_code
+mon8_tex_80170DE0_png = 0x80170DE0; // segment:river_code
+mon8_tex_801711E8 = 0x801711E8; // segment:river_code
+mon8_tex_80171210_png = 0x80171210; // segment:river_code
+mon8_tex_80171318 = 0x80171318; // segment:river_code
+mon8_tex_80171340_png = 0x80171340; // segment:river_code
+mon8_tex_80171388 = 0x80171388; // segment:river_code
+mon8_tex_801713D0 = 0x801713D0; // segment:river_code
+mon8_tex_80171418 = 0x80171418; // segment:river_code
+mon8_tex_80171440_png = 0x80171440; // segment:river_code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
