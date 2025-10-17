@@ -8,7 +8,7 @@ A WIP decomp of Pokemon Snap.
 Note: To use this repository, you must already have a rom for the game.
 
 For Python dependencies:
-`pip3 install -U -r requirements.txt`
+`uv sync`
 
 ## Setup
 
