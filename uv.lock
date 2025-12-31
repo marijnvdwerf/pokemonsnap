@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 
 [[package]]
@@ -570,14 +570,14 @@ wheels = [
 
 [[package]]
 name = "spimdisasm"
-version = "1.39.0"
+version = "1.39.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "rabbitizer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4f/9b/1acaf60a162145b0f410586263549e2cfc808433f63f146c60c119d7aef1/spimdisasm-1.39.0.tar.gz", hash = "sha256:bba9fdbb56caa34e9f8cf447254f5cab5f2a24d66e1ba6ce2e9f380aa170248c", size = 107845, upload-time = "2025-10-06T17:04:21.839Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ea/9f/548b1239e4340763baa4030d2227df7f4b18ac4328c384e1a157d60274b7/spimdisasm-1.39.3.tar.gz", hash = "sha256:c2c9f67678d511672b5a8c91cb5c26177b00f6f4cbaaacd3acba162e746609fd", size = 108731, upload-time = "2025-12-31T19:43:47.072Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/35/e0/b4b22823a8336b0551cb2ccfc6e69db24d678d9262111d512c4b18838bb4/spimdisasm-1.39.0-py3-none-any.whl", hash = "sha256:0a9fe99c1e10296df4b47d5520f5c86e0a279e6cf968a1a3b923db3e49a04134", size = 138526, upload-time = "2025-10-06T17:04:20.413Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/71/35051e46068bff429b3b4c43bfb6d477d4359c5578497c1abfad17064465/spimdisasm-1.39.3-py3-none-any.whl", hash = "sha256:fbe1258926adfaab535e17bb8345e4e4d712029a8f8fe42ee993dd885d2ea510", size = 139185, upload-time = "2025-12-31T19:43:45.263Z" },
 ]
 
 [[package]]
