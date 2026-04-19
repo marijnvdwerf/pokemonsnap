@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         ref: ${{ github.event.pull_request.head.sha }}
 
@@ -26,7 +26,7 @@ jobs:
       run: sudo apt-get install -y build-essential python3 binutils-mips-linux-gnu
 
     - name: Get extra dependencies
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         repository: ${{ secrets.SECRETREPO }}
         token: ${{ secrets.SECRETTOKEN }}
