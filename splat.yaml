@@ -5183,6 +5183,7 @@ segments:
     exclusive_ram_id: app_level
     subsegments:
     - [auto, c, font]
+    - [auto, c, sprites_2]
     - [0x4F0610, c, player]
     - [0x4F8B20, pad, padding_4F8B20]
     - [0x4F8B30, c, bump_detect]
@@ -5200,15 +5201,101 @@ segments:
     - [0x506290, c, render_player]
     - [0x5064F0, c, envsound]
     - [0x506DD0, c, trig]
-    - [0x506FB0, data]
-    - [0x523000, .data, player]
+    - name: player
+      type: .data
+      start: 0x506FB0
+      subsegments:
+      - [0x506FE8, snap_sprite]
+      - [0x507240]
+      - [0x507248, snap_sprite]
+      - [0x5079D0]
+      - [0x5079D8, snap_sprite]
+      - [0x508160]
+      - [0x508168, snap_sprite]
+      - [0x508210]
+      - [0x508218, snap_sprite]
+      - [0x508488]
+      - [0x508490, snap_sprite]
+      - [0x510B30]
+      - [0x510B38, snap_sprite]
+      - [0x5191D8]
+      - [0x5191E0, snap_sprite]
+      - [0x519328]
+      - [0x519330, snap_sprite]
+      - [0x51ADF0]
+      - [0x51ADF8, snap_sprite]
+      - [0x51C8B8]
+      - [0x51C8C0, snap_sprite]
+      - [0x51D6F0]
+      - [0x51D6F8, snap_sprite]
+      - [0x51E528]
+      - [0x51E530, snap_sprite]
+      - [0x51F360]
+      - [0x51F368, snap_sprite]
+      - [0x520198]
+      - [0x5201A0, snap_sprite]
+      - [0x520FD0]
+      - [0x520FD8, snap_sprite]
+      - [0x521E08]
+      - [0x521E10, snap_sprite]
+      - [0x521FA8]
+      - [0x521FB0, snap_sprite]
+      - [0x523008]
     - [0x5231D0, .data, bump_detect]
     - [0x5231F0, .data, pokemon_detect]
     - [0x5232C0, .data, items]
-    - [0x523300, data] # has sprite data which should be in icons.c
-    - [0x528530, .data, icons]
+    - name: icons
+      start: 0x523300
+      type: .data
+      subsegments:
+      - [0x523300, snap_sprite]
+      - [0x523F98]
+      - [0x523FA0, snap_sprite]
+      - [0x524618]
+      - [0x524620, snap_sprite]
+      - [0x5252B8]
+      - [0x5252C0, snap_sprite]
+      - [0x525F58]
+      - [0x525F60, snap_sprite]
+      - [0x526BF8]
+      - [0x526C00, snap_sprite]
+      - [0x527898]
+      - [0x5278A0, snap_sprite]
+      - [0x528538]
     - [0x528720, .data, 4FE330]
-    - [0x5287B0, data]
+    - name: sprites_2
+      start: 0x5287B0
+      type: .data
+      subsegments:
+      - [0x5287B0, snap_sprite]
+      - [0x529250]
+      - [0x529258, snap_sprite]
+      - [0x5293B0]
+      - [0x5293B8, snap_sprite]
+      - [0x529510]
+      - [0x529518, snap_sprite]
+      - [0x529670]
+      - [0x529678, snap_sprite]
+      - [0x5297D0]
+      - [0x5297D8, snap_sprite]
+      - [0x529930]
+      - [0x529938, snap_sprite]
+      - [0x529A90]
+      - [0x529A98, snap_sprite]
+      - [0x529BF0]
+      - [0x529BF8, snap_sprite]
+      - [0x529D50]
+      - [0x529D58, snap_sprite]
+      - [0x529EB0]
+      - [0x529EB8, snap_sprite]
+      - [0x52A010]
+      - [0x52A018, snap_sprite]
+      - [0x52A170]
+      - [0x52A178, snap_sprite]
+      - [0x52A2D0]
+      - [0x52A2D8, snap_sprite]
+      - [0x52A430]
+    - [0x52A440, data]
     - { start: 0x52A470, type: .rodata, name: player, linker_section_order: .data }
     - { start: 0x52A710, type: .rodata, name: bump_detect, linker_section_order: .data }
     - { start: 0x52A720, type: .rodata, name: items, linker_section_order: .data }
@@ -5221,298 +5308,10 @@ segments:
       dir: font
       start: 0x52A8A0
       subsegments:
-        - {start: 0x52A8A8, name: "btn_z", type: rgba16, width: 16, height: 13 }
-        - [0x52AA48]
-        - {start: 0x52AA50, name: "btn_z_pressed", type: rgba16, width: 16, height: 13 }
-        - [0x52ABF0]
-        - {start: 0x52ABF8, name: "btn_r", type: rgba16, width: 16, height: 13 }
-        - [0x52AD98]
-        - {start: 0x52ADA0, name: "btn_r_pressed", type: rgba16, width: 16, height: 13 }
-        - [0x52AF40]
-        - {start: 0x52AF48, name: "page", type: rgba16, width: 16, height: 13 }
-        - [0x52B0E8]
-        - {start: 0x52B0F0, name: "page_folded", type: rgba16, width: 16, height: 13 }
-        - [0x52B290]
-        - {start: 0x52B298, name: "btn_a", type: rgba16, width: 16, height: 13 }
-        - [0x52B438]
-        - {start: 0x52B440, name: "btn_a_pressed", type: rgba16, width: 16, height: 13 }
-        - [0x52B5E0]
-        - {start: 0x52B5E8, name: "btn_b", type: rgba16, width: 16, height: 13 }
-        - [0x52B788]
-        - {start: 0x52B790, name: "btn_b_pressed", type: rgba16, width: 16, height: 13 }
-        - [0x52B930]
-        - {start: 0x52B938, name: "new_l", type: rgba16, width: 16, height: 13 }
-        - [0x52BAD8]
-        - {start: 0x52BAE0, name: "new_r", type: rgba16, width: 16, height: 13 }
-        - [0x52BC80]
-        - {start: 0x52BC88, name: "new_l_alt", type: rgba16, width: 16, height: 13 }
-        - [0x52BE28]
-        - {start: 0x52BE30, name: "new_r_alt", type: rgba16, width: 16, height: 13 }
-        - [0x52BFD0]
-        - {start: 0x52BFD8, type: rgba16, width: 16, height: 13 }
-        - [0x52C178]
-        - {start: 0x52C180, type: rgba16, width: 16, height: 13 }
-        - [0x52C320]
-        - {start: 0x52C470, name: "upper_a", type: i8, width: 16, height: 13}
-        - [0x52C540]
-        - {start: 0x52C548, name: "upper_b", type: i8, width: 16, height: 13}
-        - [0x52C618]
-        - {start: 0x52C620, name: "upper_c", type: i8, width: 16, height: 13}
-        - [0x52C6F0]
-        - {start: 0x52C6F8, name: "upper_d", type: i8, width: 16, height: 13}
-        - [0x52C7C8]
-        - {start: 0x52C7D0, name: "upper_e", type: i8, width: 16, height: 13}
-        - [0x52C8A0]
-        - {start: 0x52C8A8, name: "upper_f", type: i8, width: 16, height: 13}
-        - [0x52C978]
-        - {start: 0x52C980, name: "upper_g", type: i8, width: 16, height: 13}
-        - [0x52CA50]
-        - {start: 0x52CA58, name: "upper_h", type: i8, width: 16, height: 13}
-        - [0x52CB28]
-        - {start: 0x52CB30, name: "upper_i", type: i8, width: 16, height: 13}
-        - [0x52CC00]
-        - {start: 0x52CC08, name: "upper_j", type: i8, width: 16, height: 13}
-        - [0x52CCD8]
-        - {start: 0x52CCE0, name: "upper_k", type: i8, width: 16, height: 13}
-        - [0x52CDB0]
-        - {start: 0x52CDB8, name: "upper_l", type: i8, width: 16, height: 13}
-        - [0x52CE88]
-        - {start: 0x52CE90, name: "upper_m", type: i8, width: 16, height: 13}
-        - [0x52CF60]
-        - {start: 0x52CF68, name: "upper_n", type: i8, width: 16, height: 13}
-        - [0x52D038]
-        - {start: 0x52D040, name: "upper_o", type: i8, width: 16, height: 13}
-        - [0x52D110]
-        - {start: 0x52D118, name: "upper_p", type: i8, width: 16, height: 13}
-        - [0x52D1E8]
-        - {start: 0x52D1F0, name: "upper_q", type: i8, width: 16, height: 13}
-        - [0x52D2C0]
-        - {start: 0x52D2C8, name: "upper_r", type: i8, width: 16, height: 13}
-        - [0x52D398]
-        - {start: 0x52D3A0, name: "upper_s", type: i8, width: 16, height: 13}
-        - [0x52D470]
-        - {start: 0x52D478, name: "upper_t", type: i8, width: 16, height: 13}
-        - [0x52D548]
-        - {start: 0x52D550, name: "upper_u", type: i8, width: 16, height: 13}
-        - [0x52D620]
-        - {start: 0x52D628, name: "upper_v", type: i8, width: 16, height: 13}
-        - [0x52D6F8]
-        - {start: 0x52D700, name: "upper_w", type: i8, width: 16, height: 13}
-        - [0x52D7D0]
-        - {start: 0x52D7D8, name: "upper_x", type: i8, width: 16, height: 13}
-        - [0x52D8A8]
-        - {start: 0x52D8B0, name: "upper_y", type: i8, width: 16, height: 13}
-        - [0x52D980]
-        - {start: 0x52D988, name: "upper_z", type: i8, width: 16, height: 13}
-        - [0x52DA58]
-        - {start: 0x52DA60, name: "lower_a", type: i8, width: 16, height: 13}
-        - [0x52DB30]
-        - {start: 0x52DB38, name: "lower_b", type: i8, width: 16, height: 13}
-        - [0x52DC08]
-        - {start: 0x52DC10, name: "lower_c", type: i8, width: 16, height: 13}
-        - [0x52DCE0]
-        - {start: 0x52DCE8, name: "lower_d", type: i8, width: 16, height: 13}
-        - [0x52DDB8]
-        - {start: 0x52DDC0, name: "lower_e", type: i8, width: 16, height: 13}
-        - [0x52DE90]
-        - {start: 0x52DE98, name: "lower_f", type: i8, width: 16, height: 13}
-        - [0x52DF68]
-        - {start: 0x52DF70, name: "lower_g", type: i8, width: 16, height: 13}
-        - [0x52E040]
-        - {start: 0x52E048, name: "lower_h", type: i8, width: 16, height: 13}
-        - [0x52E118]
-        - {start: 0x52E120, name: "lower_i", type: i8, width: 16, height: 13}
-        - [0x52E1F0]
-        - {start: 0x52E1F8, name: "lower_j", type: i8, width: 16, height: 13}
-        - [0x52E2C8]
-        - {start: 0x52E2D0, name: "lower_k", type: i8, width: 16, height: 13}
-        - [0x52E3A0]
-        - {start: 0x52E3A8, name: "lower_l", type: i8, width: 16, height: 13}
-        - [0x52E478]
-        - {start: 0x52E480, name: "lower_m", type: i8, width: 16, height: 13}
-        - [0x52E550]
-        - {start: 0x52E558, name: "lower_n", type: i8, width: 16, height: 13}
-        - [0x52E628]
-        - {start: 0x52E630, name: "lower_o", type: i8, width: 16, height: 13}
-        - [0x52E700]
-        - {start: 0x52E708, name: "lower_p", type: i8, width: 16, height: 13}
-        - [0x52E7D8]
-        - {start: 0x52E7E0, name: "lower_q", type: i8, width: 16, height: 13}
-        - [0x52E8B0]
-        - {start: 0x52E8B8, name: "lower_r", type: i8, width: 16, height: 13}
-        - [0x52E988]
-        - {start: 0x52E990, name: "lower_s", type: i8, width: 16, height: 13}
-        - [0x52EA60]
-        - {start: 0x52EA68, name: "lower_t", type: i8, width: 16, height: 13}
-        - [0x52EB38]
-        - {start: 0x52EB40, name: "lower_u", type: i8, width: 16, height: 13}
-        - [0x52EC10]
-        - {start: 0x52EC18, name: "lower_v", type: i8, width: 16, height: 13}
-        - [0x52ECE8]
-        - {start: 0x52ECF0, name: "lower_w", type: i8, width: 16, height: 13}
-        - [0x52EDC0]
-        - {start: 0x52EDC8, name: "lower_x", type: i8, width: 16, height: 13}
-        - [0x52EE98]
-        - {start: 0x52EEA0, name: "lower_y", type: i8, width: 16, height: 13}
-        - [0x52EF70]
-        - {start: 0x52EF78, name: "lower_z", type: i8, width: 16, height: 13}
-        - [0x52F048]
-        - {start: 0x52F050, name: "numeral_1", type: i8, width: 16, height: 13}
-        - [0x52F120]
-        - {start: 0x52F128, name: "numeral_2", type: i8, width: 16, height: 13}
-        - [0x52F1F8]
-        - {start: 0x52F200, name: "numeral_3", type: i8, width: 16, height: 13}
-        - [0x52F2D0]
-        - {start: 0x52F2D8, name: "numeral_4", type: i8, width: 16, height: 13}
-        - [0x52F3A8]
-        - {start: 0x52F3B0, name: "numeral_5", type: i8, width: 16, height: 13}
-        - [0x52F480]
-        - {start: 0x52F488, name: "numeral_6", type: i8, width: 16, height: 13}
-        - [0x52F558]
-        - {start: 0x52F560, name: "numeral_7", type: i8, width: 16, height: 13}
-        - [0x52F630]
-        - {start: 0x52F638, name: "numeral_8", type: i8, width: 16, height: 13}
-        - [0x52F708]
-        - {start: 0x52F710, name: "numeral_9", type: i8, width: 16, height: 13}
-        - [0x52F7E0]
-        - {start: 0x52F7E8, name: "numeral_0", type: i8, width: 16, height: 13}
-        - [0x52F8B8]
-        - {start: 0x52F8C0, name: "arrowup", type: i8, width: 16, height: 13}
-        - [0x52F990]
-        - {start: 0x52F998, name: "arrowdown", type: i8, width: 16, height: 13}
-        - [0x52FA68]
-        - {start: 0x52FA70, type: i8, width: 16, height: 13}
-        - [0x52FB40]
-        - {start: 0x52FB48, name: "asciitilde", type: i8, width: 16, height: 13}
-        - [0x52FC18]
-        - {start: 0x52FC20, name: "exclam", type: i8, width: 16, height: 13}
-        - [0x52FCF0]
-        - {start: 0x52FCF8, name: "at", type: i8, width: 16, height: 13}
-        - [0x52FDC8]
-        - {start: 0x52FDD0, name: "numbersign", type: i8, width: 16, height: 13}
-        - [0x52FEA0]
-        - {start: 0x52FEA8, name: "dollar", type: i8, width: 16, height: 13}
-        - [0x52FF78]
-        - {start: 0x52FF80, name: "percent", type: i8, width: 16, height: 13}
-        - [0x530050]
-        - {start: 0x530058, name: "ampersand", type: i8, width: 16, height: 13}
-        - [0x530128]
-        - {start: 0x530130, name: "asterisk", type: i8, width: 16, height: 13}
-        - [0x530200]
-        - {start: 0x530208, name: "parenleft", type: i8, width: 16, height: 13}
-        - [0x5302D8]
-        - {start: 0x5302E0, name: "parenright", type: i8, width: 16, height: 13}
-        - [0x5303B0]
-        - {start: 0x5303B8, name: "underscore", type: i8, width: 16, height: 13}
-        - [0x530488]
-        - {start: 0x530490, name: "plus", type: i8, width: 16, height: 13}
-        - [0x530560]
-        - {start: 0x530568, name: "equal", type: i8, width: 16, height: 13}
-        - [0x530638]
-        - {start: 0x530640, name: "hyphen", type: i8, width: 16, height: 13}
-        - [0x530710]
-        - {start: 0x530718, name: "quotesingle", type: i8, width: 16, height: 13}
-        - [0x5307E8]
-        - {start: 0x5307F0, name: "quotedbl", type: i8, width: 16, height: 13}
-        - [0x5308C0]
-        - {start: 0x5308C8, name: "semicolon", type: i8, width: 16, height: 13}
-        - [0x530998]
-        - {start: 0x5309A0, name: "colon", type: i8, width: 16, height: 13}
-        - [0x530A70]
-        - {start: 0x530A78, name: "slash", type: i8, width: 16, height: 13}
-        - [0x530B48]
-        - {start: 0x530B50, name: "period", type: i8, width: 16, height: 13}
-        - [0x530C20]
-        - {start: 0x530C28, name: "comma", type: i8, width: 16, height: 13}
-        - [0x530CF8]
-        - {start: 0x530D00, name: "question", type: i8, width: 16, height: 13}
-        - [0x530DD0]
-        - {start: 0x530DD8, name: "less", type: i8, width: 16, height: 13}
-        - [0x530EA8]
-        - {start: 0x530EB0, name: "greater", type: i8, width: 16, height: 13}
-        - [0x530F80]
-        - {start: 0x530F88, name: "male", type: i8, width: 16, height: 13}
-        - [0x531058]
-        - {start: 0x531060, name: "female", type: i8, width: 16, height: 13}
-        - [0x531130]
-        - {start: 0x531138, name: "PK", type: i8, width: 16, height: 13}
-        - [0x531208]
-        - {start: 0x531210, name: "MN", type: i8, width: 16, height: 13}
-        - [0x5312E0]
-        - {start: 0x5312E8, name: "pokedollar", type: i8, width: 16, height: 13}
-        - [0x5313B8]
-        - {start: 0x5313C0, name: "bracketleft", type: i8, width: 16, height: 13}
-        - [0x531490]
-        - {start: 0x531498, name: "bracketright", type: i8, width: 16, height: 13}
-        - [0x531568]
-        - {start: 0x531570, name: "eacute", type: i8, width: 16, height: 13}
-        - [0x531640]
-        - {start: 0x531648, name: "arrowright", type: i8, width: 16, height: 13}
-        - [0x531718]
-        - {start: 0x531720, name: "arrowleft", type: i8, width: 16, height: 13}
-        - [0x5317F0]
-        - {start: 0x5317F8, type: i8, width: 16, height: 13}
-        - [0x5318C8]
-        - {start: 0x5318D0, type: i8, width: 16, height: 13}
-        - [0x5319A0]
-        - {start: 0x5319A8, type: i8, width: 16, height: 13}
-        - [0x531A78]
-        - {start: 0x531A80, type: i8, width: 16, height: 13}
-        - [0x531B50]
-        - {start: 0x531B58, type: i8, width: 16, height: 13}
-        - [0x531C28]
-        - {start: 0x531C30, type: i8, width: 16, height: 13}
-        - [0x531D00]
-        - {start: 0x531D08, type: i8, width: 16, height: 13}
-        - [0x531DD8]
-        - {start: 0x531DE0, type: i8, width: 16, height: 13}
-        - [0x531EB0]
-        - {start: 0x531EB8, type: i8, width: 16, height: 13}
-        - [0x531F88]
-        - {start: 0x531F90, type: i8, width: 16, height: 13}
-        - [0x532060]
-        - {start: 0x532068, type: i8, width: 16, height: 13}
-        - [0x532138]
-        - {start: 0x532140, type: i8, width: 16, height: 13}
-        - [0x532210]
-        - {start: 0x532218, type: i8, width: 16, height: 13}
-        - [0x5322E8]
-        - {start: 0x5322F0, type: i8, width: 16, height: 13}
-        - [0x5323C0]
-        - {start: 0x5323C8, type: i8, width: 16, height: 13}
-        - [0x532498]
-        - {start: 0x5324A0, type: i8, width: 16, height: 13}
-        - [0x532570]
-        - {start: 0x532578, type: i8, width: 16, height: 13}
-        - [0x532648]
-        - {start: 0x532650, type: i8, width: 16, height: 13}
-        - [0x532720]
-        - {start: 0x532728, type: i8, width: 16, height: 13}
-        - [0x5327F8]
-        - {start: 0x532800, type: i8, width: 16, height: 13}
-        - [0x5328D0]
-        - {start: 0x5328D8, type: i8, width: 16, height: 13}
-        - [0x5329A8]
-        - {start: 0x5329B0, type: i8, width: 16, height: 13}
-        - [0x532A80]
-        - {start: 0x532A88, type: i8, width: 16, height: 13}
-        - [0x532B58]
-        - {start: 0x532B60, type: i8, width: 16, height: 13}
-        - [0x532C30]
-        - {start: 0x532C38, type: i8, width: 16, height: 13}
-        - [0x532D08]
-        - {start: 0x532D10, type: i8, width: 16, height: 13}
-        - [0x532DE0]
-        - {start: 0x532DE8, type: i8, width: 16, height: 13}
-        - [0x532EB8]
-        - {start: 0x532EC0, type: i8, width: 16, height: 13}
-        - [0x532F90]
-        - {start: 0x532F98, type: i8, width: 16, height: 13}
-        - [0x533068]
-        - {start: 0x533070, type: i8, width: 16, height: 13}
-        - [0x533140]
-        - {start: 0x533148, type: i8, width: 16, height: 13}
-        - [0x533218]
+      - [0x52A8A0, snap_sprite]
+      - [0x52C460, bin]
+      - [0x52C468, snap_sprite]
+      - [0x533A78, bin]
     - [0x533C00, data]
     - [0x533C10, .rodata, pokemon]
     - [0x533E90, .rodata, 503C10]
@@ -8898,6 +8697,7 @@ segments:
     bss_size: 0x1880
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites] # TODO: place me
     - [0x79F1B0, c]
     - [0x79FB70, c]
     - [0x7A00C0, c]
@@ -8924,7 +8724,41 @@ segments:
     - [0x7AA790, c]
     - [0x7AB7C0, c]
     - [0x7ABB10, c]
-    - [0x7ABCD0, bin] # , data]
+    - [0x7ABCD0, bin]
+    - name: sprites
+      type: .data
+      start: 0x7AD7C0 # not actual start
+      subsegments:
+      - [0x7AD7C0]
+      - [0x7AD7C8, snap_sprite]
+      - [0x7C00E8]
+      - [0x7C00F0, snap_sprite]
+      - [0x7C06E8]
+      - [0x7C06F0, snap_sprite]
+      - [0x7C0CE8]
+      - [0x7C0CF0, snap_sprite]
+      - [0x7C12E8]
+      - [0x7C12F0, snap_sprite]
+      - [0x7C18E8]
+      - [0x7C18F0, snap_sprite]
+      - [0x7C1EE8]
+      - [0x7C1EF0, snap_sprite]
+      - [0x7C24E8]
+      - [0x7C24F0, snap_sprite]
+      - [0x7C2D88]
+      - [0x7C2D90, snap_sprite]
+      - [0x7C3628]
+      - [0x7C3630, snap_sprite]
+      - [0x7C3EC8]
+      - [0x7C3ED0, snap_sprite]
+      - [0x7C4768]
+      - [0x7C4770, snap_sprite]
+      - [0x7C5008]
+      - [0x7C5010, snap_sprite]
+      - [0x7C58A8]
+      - [0x7C58B0, snap_sprite]
+      - [0x7C5AA8]
+    - [0x7C5AB0, bin]
     - [auto, c, graveler/model]
     - [auto, c, gyarados/model]
     - [auto, c, staryu/model]
@@ -9911,6 +9745,11 @@ segments:
     bss_size: 0x8A0
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites_1] # TODO: place me
+    - [auto, c, sprites_2] # TODO: place me
+    - [auto, c, sprites_3] # TODO: place me
+    - [auto, c, sprites_4] # TODO: place me
+    - [auto, c, sprites_5] # TODO: place me
     - [0x83D730, c]
     - [0x83DC20, pad]
     - [0x83DC30, c, element]
@@ -9931,7 +9770,73 @@ segments:
     - [0x848BC0, data]
     - [0x852220, .data, element]
     - [0x852250, .data, text]
-    - [0x852920, data]
+    - name: sprites_1
+      type: .data
+      start: 0x852920
+      subsegments:
+      - [0x852920, snap_sprite]
+      - [0x852A98]
+    - [0x852AA0, data]
+    - name: sprites_2
+      type: .data
+      start: 0x8543A0
+      subsegments:
+      - [0x8543A0, snap_sprite]
+      - [0x854478]
+    - [0x854480, data]
+    - name: sprites_3
+      type: .data
+      start: 0x8550E0
+      subsegments:
+      - [0x8550E0, snap_sprite]
+      - [0x855228]
+    - [0x855230, data]
+    - name: sprites_4
+      type: .data
+      start: 0x855560
+      subsegments:
+      - [0x855560, snap_sprite]
+      - [0x8564D0]
+    - [0x8564E0, data]
+    - name: sprites_5
+      type: .data
+      start: 0x874AD0 # TODO: merge with previous segment
+      subsegments:
+      - [0x874AD8, snap_sprite]
+      - [0x874B50]
+      - [0x874B58, snap_sprite]
+      - [0x875300]
+      - [0x875308, snap_sprite]
+      - [0x875AB0]
+      - [0x875AB8, snap_sprite]
+      - [0x878990]
+      - [0x878998, snap_sprite]
+      - [0x878B10]
+      - [0x878B18, snap_sprite]
+      - [0x878C90]
+      - [0x878C98, snap_sprite]
+      - [0x878E10]
+      - [0x878E18, snap_sprite]
+      - [0x878F90]
+      - [0x878F98, snap_sprite]
+      - [0x879110]
+      - [0x879118, snap_sprite]
+      - [0x879290]
+      - [0x879298, snap_sprite]
+      - [0x879410]
+      - [0x879418, snap_sprite]
+      - [0x879590]
+      - [0x879598, snap_sprite]
+      - [0x879710]
+      - [0x879718, snap_sprite]
+      - [0x879890]
+      - [0x879898, snap_sprite]
+      - [0x879A10]
+      - [0x879A18, snap_sprite]
+      - [0x879B90]
+      - [0x879B98, snap_sprite]
+      - [0x879D10]
+    - [0x879D20, data]
     - [0x879DB0, .data, layout]
     - [0x879DF0, data]
     - [0x879E80, .data, 848B80]
@@ -9957,8 +9862,64 @@ segments:
     - [0x87FB20, c]
 
     - [0x8817E0, .data, 87A0B0]
-    - [0x881900, data]
-    - [0x8A6130, .data, 87A330]
+    - name: 87A330
+      type: .data
+      start: 0x881900
+      subsegments:
+      - [0x881900, snap_sprite]
+      - [0x88DD90]
+      - [0x88DD98, snap_sprite]
+      - [0x89A228]
+      - [0x89A230, snap_sprite]
+      - [0x89A488]
+      - [0x89A490, snap_sprite]
+      - [0x89A6A8]
+      - [0x89A6B0, snap_sprite]
+      - [0x89A8B8]
+      - [0x89A8C0, snap_sprite]
+      - [0x89A998]
+      - [0x89A9A0, snap_sprite]
+      - [0x89AA78]
+      - [0x89AA80, snap_sprite]
+      - [0x89AB58]
+      - [0x89AB60, snap_sprite]
+      - [0x89AC38]
+      - [0x89AC40, snap_sprite]
+      - [0x89AD18]
+      - [0x89AD20, snap_sprite]
+      - [0x89ADF8]
+      - [0x89AE00, snap_sprite]
+      - [0x89AED8]
+      - [0x89AEE0, snap_sprite]
+      - [0x89B210]
+      - [0x89B218, snap_sprite]
+      - [0x89B5E8]
+      - [0x89B5F0, snap_sprite]
+      - [0x89B990]
+      - [0x89B998, snap_sprite]
+      - [0x89BB48]
+      - [0x89BB50, snap_sprite]
+      - [0x89BC78]
+      - [0x89BC80, snap_sprite]
+      - [0x89BDF8]
+      - [0x89BE00, snap_sprite]
+      - [0x89BF78]
+      - [0x89BF80, snap_sprite]
+      - [0x89C0F8]
+      - [0x89C100, snap_sprite]
+      - [0x89C958]
+      - [0x89C960, snap_sprite]
+      - [0x89D1B8]
+      - [0x89D1C0, snap_sprite]
+      - [0x89D338]
+      - [0x89D340, snap_sprite]
+      - [0x89D4B8]
+      - [0x89D4C0, snap_sprite]
+      - [0x89DD18]
+      - [0x89DD20, snap_sprite]
+      - [0x89ED50]
+      - [0x89ED58, snap_sprite]
+      - [0x8A6130]
     - [0x8A6150, .data, 87D1A0]
     - [0x8A61E0, data]
 
@@ -9973,6 +9934,7 @@ segments:
     bss_size: 0x40080
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, more_sprites] # TODO: place me
     - [0x8A70E0, c]
     - [0x8A7360, c]
     - [0x8A8A50, c]
@@ -9980,12 +9942,215 @@ segments:
     - [0x8AAF50, pad]
     - [0x8AAF60, c]
     - [0x8ABEF0, .data, 8A70E0]
-    - [0x8AC010, data] # sprite data. Should be in the same file as the next segment
-    - [0x95B000, .data, 8A7360]
+    - name: 8A7360
+      type: .data
+      start: 0x8AC010
+      subsegments:
+      - [0x8AC010, snap_sprite]
+      - [0x8D1DF0]
+      - [0x8D1DF8, snap_sprite]
+      - [0x8E4700]
+      - [0x8E4708, snap_sprite]
+      - [0x8E7DA8]
+      - [0x8E7DB0, snap_sprite]
+      - [0x8EE798]
+      - [0x8EE7A0, snap_sprite]
+      - [0x8F0B28]
+      - [0x8F0B30, snap_sprite]
+      - [0x8F2EB8]
+      - [0x8F2EC0, snap_sprite]
+      - [0x8F5248]
+      - [0x8F5250, snap_sprite]
+      - [0x8F75D8]
+      - [0x8F75E0, snap_sprite]
+      - [0x8F9968]
+      - [0x8F9970, snap_sprite]
+      - [0x8FBCF8]
+      - [0x8FBD00, snap_sprite]
+      - [0x8FE088]
+      - [0x8FE090, snap_sprite]
+      - [0x8FEF58]
+      - [0x8FEF60, snap_sprite]
+      - [0x9012E8]
+      - [0x9012F0, snap_sprite]
+      - [0x903678]
+      - [0x903680, snap_sprite]
+      - [0x905A08]
+      - [0x905A10, snap_sprite]
+      - [0x9068D8]
+      - [0x9068E0, snap_sprite]
+      - [0x9077A8]
+      - [0x9077B0, snap_sprite]
+      - [0x908678]
+      - [0x908680, snap_sprite]
+      - [0x909548]
+      - [0x909550, snap_sprite]
+      - [0x90B8D8]
+      - [0x90B8E0, snap_sprite]
+      - [0x90C178]
+      - [0x90C180, snap_sprite]
+      - [0x90CA18]
+      - [0x90CA20, snap_sprite]
+      - [0x90D2B8]
+      - [0x90D2C0, snap_sprite]
+      - [0x90DB58]
+      - [0x90DB60, snap_sprite]
+      - [0x90E3F8]
+      - [0x90E400, snap_sprite]
+      - [0x90EC98]
+      - [0x90ECA0, snap_sprite]
+      - [0x90F298]
+      - [0x90F2A0, snap_sprite]
+      - [0x90F898]
+      - [0x90F8A0, snap_sprite]
+      - [0x90FE98]
+      - [0x90FEA0, snap_sprite]
+      - [0x910498]
+      - [0x9104A0, snap_sprite]
+      - [0x910A98]
+      - [0x910AA0, snap_sprite]
+      - [0x911098]
+      - [0x9110A0, snap_sprite]
+      - [0x911698]
+      - [0x9116A0, snap_sprite]
+      - [0x911C98]
+      - [0x911CA0, snap_sprite]
+      - [0x912298]
+      - [0x9122A0, snap_sprite]
+      - [0x912898]
+      - [0x9128A0, snap_sprite]
+      - [0x912E98]
+      - [0x912EA0, snap_sprite]
+      - [0x913498]
+      - [0x9134A0, snap_sprite]
+      - [0x913A98]
+      - [0x913AA0, snap_sprite]
+      - [0x914098]
+      - [0x9140A0, snap_sprite]
+      - [0x9160F0]
+      - [0x9160F8, snap_sprite]
+      - [0x918148]
+      - [0x918150, snap_sprite]
+      - [0x91A1A0]
+      - [0x91A1A8, snap_sprite]
+      - [0x91C1F8]
+      - [0x91C200, snap_sprite]
+      - [0x91E250]
+      - [0x91E258, snap_sprite]
+      - [0x9202A8]
+      - [0x9202B0, snap_sprite]
+      - [0x922300]
+      - [0x922308, snap_sprite]
+      - [0x924358]
+      - [0x924360, snap_sprite]
+      - [0x925460]
+      - [0x925468, snap_sprite]
+      - [0x926568]
+      - [0x926570, snap_sprite]
+      - [0x927670]
+      - [0x927678, snap_sprite]
+      - [0x928778]
+      - [0x928780, snap_sprite]
+      - [0x929880]
+      - [0x929888, snap_sprite]
+      - [0x92A988]
+      - [0x92A990, snap_sprite]
+      - [0x92BA90]
+      - [0x92BA98, snap_sprite]
+      - [0x92CB98]
+      - [0x92CBA0, snap_sprite]
+      - [0x92DCA0]
+      - [0x92DCA8, snap_sprite]
+      - [0x92EDA8]
+      - [0x92EDB0, snap_sprite]
+      - [0x92FEB0]
+      - [0x92FEB8, snap_sprite]
+      - [0x955C98]
+      - [0x955CA0, snap_sprite]
+      - [0x957CF0]
+      - [0x957CF8, snap_sprite]
+      - [0x958DF8]
+      - [0x958E00, snap_sprite]
+      - [0x959F00]
+      - [0x959F08, snap_sprite]
+      - [0x95B008]
     - [0x95B070, data]
     - [0x95B530, .data, 8A9CC0]
-    - [0x95B6C0, data] # more sprites
-
+    - name: more_sprites
+      type: .data
+      start: 0x95B6C0
+      subsegments:
+      - [0x95B6C0, snap_sprite]
+      - [0x95D710]
+      - [0x95D718, snap_sprite]
+      - [0x95E818]
+      - [0x95E820, snap_sprite]
+      - [0x95F920]
+      - [0x95F928, snap_sprite]
+      - [0x960A28]
+      - [0x960A30, snap_sprite]
+      - [0x961B30]
+      - [0x961B38, snap_sprite]
+      - [0x962C38]
+      - [0x962C40, snap_sprite]
+      - [0x963D40]
+      - [0x963D48, snap_sprite]
+      - [0x964E48]
+      - [0x964E50, snap_sprite]
+      - [0x965F50]
+      - [0x965F58, snap_sprite]
+      - [0x967058]
+      - [0x967060, snap_sprite]
+      - [0x968160]
+      - [0x968168, snap_sprite]
+      - [0x969268]
+      - [0x969270, snap_sprite]
+      - [0x96A370]
+      - [0x96A378, snap_sprite]
+      - [0x96B478]
+      - [0x96B480, snap_sprite]
+      - [0x96C580]
+      - [0x96C588, snap_sprite]
+      - [0x96D688]
+      - [0x96D690, snap_sprite]
+      - [0x96E790]
+      - [0x96E798, snap_sprite]
+      - [0x96F898]
+      - [0x96F8A0, snap_sprite]
+      - [0x9709A0]
+      - [0x9709A8, snap_sprite]
+      - [0x9729F8]
+      - [0x972A00, snap_sprite]
+      - [0x974A50]
+      - [0x974A58, snap_sprite]
+      - [0x976AA8]
+      - [0x976AB0, snap_sprite]
+      - [0x978B00]
+      - [0x978B08, snap_sprite]
+      - [0x97AB58]
+      - [0x97AB60, snap_sprite]
+      - [0x97CBB0]
+      - [0x97CBB8, snap_sprite]
+      - [0x97EC08]
+      - [0x97EC10, snap_sprite]
+      - [0x980C60]
+      - [0x980C68, snap_sprite]
+      - [0x982CB8]
+      - [0x982CC0, snap_sprite]
+      - [0x9845F0]
+      - [0x9845F8, snap_sprite]
+      - [0x9856F8]
+      - [0x985700, snap_sprite]
+      - [0x986800]
+      - [0x986808, snap_sprite]
+      - [0x987908]
+      - [0x987910, snap_sprite]
+      - [0x988A10]
+      - [0x988A18, snap_sprite]
+      - [0x989B18]
+      - [0x989B20, snap_sprite]
+      - [0x98AC20]
+    - [0x98AC70, data]
     - [0x98AD50, rodata] # unreferenced string
     - [0x98AD70, .rodata, 8A7360]
     - [0x98AE70, .rodata, 8A8A50]
@@ -10001,12 +10166,40 @@ segments:
     bss_size: 0x327A0
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites] # TODO: place
     - [0x98C330, c]
     - [auto, c, 98D0F0]
     - [0x993C50, c]
     - [0x993F80, c]
     - [0x994E10, data]
-    - [0x9A35C0, .data, 98C330]
+    - name: sprites
+      type: .data
+      start: 0x994F30
+      subsegments:
+      - [0x994F30, snap_sprite]
+      - [0x995300]
+      - [0x995308, snap_sprite]
+      - [0x9956A8]
+      - [0x9956B0, snap_sprite]
+      - [0x995860]
+      - [0x995868, snap_sprite]
+      - [0x995990]
+      - [0x995998, snap_sprite]
+      - [0x9A1E28]
+      - [0x9A1E30, snap_sprite]
+      - [0x9A2160]
+      - [0x9A2168, snap_sprite]
+      - [0x9A23C0]
+      - [0x9A23C8, snap_sprite]
+      - [0x9A24A0]
+      - [0x9A24A8, snap_sprite]
+      - [0x9A2580]
+    - name: 98C330
+      type: .data
+      start: 0x9A35C0
+      subsegments:
+      - [0x9A2590, snap_sprite]
+      - [0x9A35C0]
     - [0x9A38D0, .data, 98D0F0]
     - [0x9A3C10, .rodata, 98C330]
     - [0x9A5AA0, .rodata, 98D0F0]
@@ -10019,13 +10212,58 @@ segments:
     bss_size: 0x47970
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites] # TODO: place
     - [0x9A6B10, c]
     - [0x9A6F70, c]
     - [0x9ABB50, c]
     - [0x9ADAD0, c]
     - [0x9AE430, .data, 9A6B10]
-    - [0x9AE550, bin, sprites]
-    - [0x9D2DA0, .data, 9A6F70]
+    - name: sprites
+      type: .data
+      start: 0x9AE550
+      subsegments:
+      - [0x9AE550, snap_sprite]
+      - [0x9AE7A8]
+      - [0x9AE7B0, snap_sprite]
+      - [0x9B77E0]
+      - [0x9B77E8, snap_sprite]
+      - [0x9BCFB8]
+      - [0x9BCFC0, snap_sprite]
+      - [0x9BD218]
+      - [0x9BD220, snap_sprite]
+      - [0x9BD398]
+      - [0x9BD3A0, snap_sprite]
+      - [0x9BD518]
+      - [0x9BD520, snap_sprite]
+      - [0x9BD698]
+      - [0x9BD6A0, snap_sprite]
+      - [0x9BD818]
+      - [0x9BD820, snap_sprite]
+      - [0x9C0DE0]
+      - [0x9C0DE8, snap_sprite]
+      - [0x9C5460]
+      - [0x9C5468, snap_sprite]
+      - [0x9C9CA0]
+      - [0x9C9CA8, snap_sprite]
+      - [0x9C9E40]
+      - [0x9C9E48, snap_sprite]
+      - [0x9C9F10]
+      - [0x9C9F18, snap_sprite]
+      - [0x9CA2E8]
+      - [0x9CA2F0, snap_sprite]
+      - [0x9CA690]
+      - [0x9CA698, snap_sprite]
+      - [0x9CA848]
+    - start: 0x9CA850
+      name: 9A6F70
+      type: .data
+      subsegments:
+      - [0x9CA850, snap_sprite]
+      - [0x9CA978, bin]
+      - [0x9CA988, snap_sprite]
+      - [0x9CB9B8, bin]
+      - [0x9CB9C8, snap_sprite]
+      - [0x9D2DA0]
     - [0x9D2DE0, .data, 9ABB50]
     - [0x9D2E90, .data, 9ADAD0]
     - [0x9D2EA0, .rodata, 9A6F70]
@@ -10038,11 +10276,64 @@ segments:
     bss_size: 0x2D210
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites]
     - [0x9D3230, c]
     - [0x9D3660, c]
     - [0x9D91C0, c]
     - [0x9DA580, .data, 9D3230]
-    - [0x9DA6A0, bin]
+    - name: sprites
+      type: .data
+      start: 0x9DA6A0
+      subsegments:
+      - [0x9DA6A0, snap_sprite]
+      - [0x9DA8F8]
+      - [0x9DA900, snap_sprite]
+      - [0x9DF920]
+      - [0x9DF928, snap_sprite]
+      - [0x9E4710]
+      - [0x9E4718, snap_sprite]
+      - [0x9E48A0]
+      - [0x9E48A8, snap_sprite]
+      - [0x9E4B00]
+      - [0x9E4B08, snap_sprite]
+      - [0x9E6180]
+      - [0x9E6188, snap_sprite]
+      - [0x9E7800]
+      - [0x9E7808, snap_sprite]
+      - [0x9E8C28]
+      - [0x9E8C30, snap_sprite]
+      - [0x9EA050]
+      - [0x9EA058, snap_sprite]
+      - [0x9EA210]
+      - [0x9EA218, snap_sprite]
+      - [0x9EA3C0]
+      - [0x9EA3C8, snap_sprite]
+      - [0x9EA540]
+      - [0x9EA548, snap_sprite]
+      - [0x9EB6F8]
+      - [0x9EB700, snap_sprite]
+      - [0x9EBAD0]
+      - [0x9EBAD8, snap_sprite]
+      - [0x9EBE78]
+      - [0x9EBE80, snap_sprite]
+      - [0x9EC030]
+      - [0x9EC038, snap_sprite]
+      - [0x9EC160]
+      - [0x9EC168, snap_sprite]
+      - [0x9ED198]
+      - [0x9ED1A0, snap_sprite]
+      - [0x9EE1D0]
+      - [0x9EE1D8, snap_sprite]
+      - [0x9EF208]
+      - [0x9EF210, snap_sprite]
+      - [0x9F0240]
+      - [0x9F0248, snap_sprite]
+      - [0x9F1278]
+      - [0x9F1280, snap_sprite]
+      - [0x9F22B0]
+      - [0x9F22C0, snap_sprite]
+      - [0x9F9698]
+    - [0x9F96A0, data]
 
     - [0x9F9990, .rodata, 9D3660]
     - [0x9FA550, .rodata, 9D91C0]
@@ -10056,12 +10347,39 @@ segments:
     bss_size: 0x46300
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites] # TODO: place me
     - [0x9FA580, c]
     - [0x9FAC10, c]
     - [0x9FD510, c]
     - [0x9FEC10, c]
     - [0x9FF2E0, data]
-
+    - name: sprites
+      type: .data
+      start: 0x9FF400
+      subsegments:
+      - [0x9FF400, snap_sprite]
+      - [0xA05DE8]
+      - [0xA05DF0, snap_sprite]
+      - [0xA05FA0]
+      - [0xA05FA8, snap_sprite]
+      - [0xA060D0]
+      - [0xA060D8, snap_sprite]
+      - [0xA06330]
+      - [0xA06338, snap_sprite]
+      - [0xA06590]
+      - [0xA06598, snap_sprite]
+      - [0xA067F0]
+      - [0xA067F8, snap_sprite]
+      - [0xA06A50]
+      - [0xA06A58, snap_sprite]
+      - [0xA06CB0]
+      - [0xA06CB8, snap_sprite]
+      - [0xA06D90]
+      - [0xA06D98, snap_sprite]
+      - [0xA06E70]
+      - [0xA06E80, snap_sprite]
+      - [0xA07EB0]
+    - [0xA07EC0, data]
     - [0xA07F80, .rodata, 9FAC10]
     - [0xA08410, .rodata, 9FD510]
 
@@ -10107,17 +10425,26 @@ segments:
     bss_size: 0x51F60
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites]
     - [0xA5CC50, c, A5CC50]
     - [0xA5D5B0, c, A5D5B0]
     - [0xA5E3A0, .data, A5CC50]
     - [0xA5EA50, .rodata, A5CC50]
     - [0xA5F040, .rodata, A5D5B0]
-    - { start: 0xA5F070, type: data, name: sprite_background, linker_section_order: .rodata }
-    - { start: 0xA84C80, type: data, name: sprite_card, linker_section_order: .rodata }
-    - { start: 0xA93390, type: data, name: sprite_cursor, linker_section_order: .rodata }
+    - name: sprites
+      type: .data
+      start: 0xA5F070
+      linker_section_order: .rodata
+      subsegments:
+      - [0xA5F070, snap_sprite, sprite_background]
+      - [0xA84C70]
+      - [0xA84C80, snap_sprite, sprite_card]
+      - [0xA93388]
+      - [0xA93390, snap_sprite, sprite_cursor]
+      - [0xA93458]
     - { start: auto, name: A5CC50, type: .bss, vram: 0x801180B0 }
     - { start: auto, name: A5D5B0, type: .bss, vram: 0x80118110 }
-    - { name: sprite_bss, type: bss, vram: 0x80168150 }
+    - { name: sprite_bss, type: bss, vram: 0x80168150 } # TODO: fix with sprite generation
 
   - name: credits
     dir: credits
@@ -10128,6 +10455,7 @@ segments:
     bss_size: 0x3590
     exclusive_ram_id: level
     subsegments:
+    - [auto, c, sprites] # TODO: place me
     - [0xA93460, c]
     - [0xA937B0, pad]
     - [0xA937C0, c]
@@ -10135,11 +10463,20 @@ segments:
     - [0xA94930, pad]
     - [0xA94940, c]
     - [0xA95760, data, A93460]
-    - [0xA95880, data] # sprite
-    - [0xA9CC60, data] # sprite
-    - [0xA9D040, data] # sprite starts 8 bytes earlier
-    - [0xA9D3E0, data] # sprite
-    - [0xA9D6B0, data] # sprite
+    - name: sprites
+      type: .data
+      start: 0xA95880
+      subsegments:
+      - [0xA95880, snap_sprite]
+      - [0xA9CC58]
+      - [0xA9CC60, snap_sprite]
+      - [0xA9D030]
+      - [0xA9D038, snap_sprite]
+      - [0xA9D3D8]
+      - [0xA9D3E8, rgba16, 'A9D3E8', 16, 16] # A sprite, but its repeating the same bitmap
+      - [0xA9D5E8]
+      - [0xA9D6B0, snap_sprite]
+      - [0xA9F750]
     - [0xA9F760, .data, A94940]
     - [0xA9FFE0, .rodata, A937C0]
     - [0xAA0000, .rodata, A937C0]
@@ -10165,7 +10502,13 @@ segments:
     bss_size: 0x20
     subsegments:
     - [0xAA18E0, c]
-    - [0xAA20A0, bin] # , data] # Image with rights notice printed on pictures
+    - name: AA18E0
+      type: .data
+      start: 0xAA20A0
+      subsegments:
+      - [0xAA20A0, snap_sprite]
+      - [0xAAA4F8]
+    - [0xAAA500, data]
     - { start: auto, name: AA18E0, type: .bss, vram: 0x801E55D0 }
 
   - [0xAAA610, bin] # VPK0 compressed data
