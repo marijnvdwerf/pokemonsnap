@@ -21,6 +21,7 @@ jobs:
         id: linter
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_EVENT_NAME: ${{ github.event_name == 'pull_request_target' && 'pull_request' || github.event_name }}
         with:
           style: file
           tidy-checks: "-*"
