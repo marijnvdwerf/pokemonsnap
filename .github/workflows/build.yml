@@ -23,7 +23,7 @@ jobs:
         run: sudo apt-get install -y binutils-mips-linux-gnu ninja-build
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@v8
         with:
           enable-cache: true
 
@@ -42,9 +42,9 @@ jobs:
         run: cargo install pigment64
 
       - name: Download ROM
+        run: gh release download rom --pattern 'pokemonsnap.z64' --repo ${{ github.repository }}
         env:
-          ROM_GDRIVE_ID: ${{ secrets.ROM_GDRIVE_ID }}
-        run: uvx gdown "$ROM_GDRIVE_ID" -O pokemonsnap.z64
+          GH_TOKEN: ${{ github.token }}
 
       - name: Setup
         run: |
