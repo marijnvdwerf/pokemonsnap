@@ -11,7 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.pull_request.merge_commit_sha || github.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Rebase on target branch
+        if: github.event_name == 'pull_request_target'
+        run: |
+          git rebase origin/${{ github.event.pull_request.base.ref }}
 
       - name: Install system dependencies
         run: sudo apt-get install -y binutils-mips-linux-gnu ninja-build
