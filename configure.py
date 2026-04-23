@@ -62,6 +62,56 @@ LIBULTRA_AS_CMD = f"{IDO_53_CC} -G 0 -non_shared -fullwarn -verbose -Wab,-r4300_
 PIGMENT64 = "pigment64"
 BIN2C = TOOLS_DIR / "bin2c.py"
 MKSPRITE = TOOLS_DIR / "mksprite.py"
+VPK0_TOOL = TOOLS_DIR / "vpk0.py"
+
+import yaml
+
+
+def run_splat_split(yaml_path: Path, disassemble_all: bool) -> List[LinkerEntry]:
+    split.main(
+        [yaml_path], modes=["all"], verbose=False, disassemble_all=disassemble_all
+    )
+    return list(split.linker_writer.entries)
+
+
+def get_vpk0_overlay_configs() -> Dict[str, Dict[str, Union[Path, str, None]]]:
+    overlay_configs: Dict[str, Dict[str, Union[Path, str, None]]] = {}
+
+    for yaml_path in sorted(Path(".").glob("*.yaml")):
+        if yaml_path == YAML_FILE:
+            continue
+
+        data = yaml.safe_load(yaml_path.read_text())
+        if not isinstance(data, dict):
+            continue
+
+        options = data.get("options")
+        if not isinstance(options, dict):
+            continue
+
+        target_path = options.get("target_path")
+        if not isinstance(target_path, str):
+            continue
+
+        target_bin_path = Path(target_path)
+        if target_bin_path.parent != Path("assets") or target_bin_path.suffix != ".bin":
+            continue
+
+        basename = str(options.get("basename", yaml_path.stem))
+        undefined_syms_path = Path(f"undefined_syms_{basename}.txt")
+        overlay_configs[basename] = {
+            "yaml_path": yaml_path,
+            "basename": basename,
+            "ld_path": Path(options.get("ld_script_path", f"{basename}.ld")),
+            "undefined_syms_path": (
+                undefined_syms_path if undefined_syms_path.exists() else None
+            ),
+            "undefined_syms_auto_path": Path(
+                options.get("undefined_syms_auto_path", "undefined_syms_auto.txt")
+            ),
+        }
+
+    return overlay_configs
 
 
 def clean():
@@ -190,41 +240,7 @@ NULL = "int"
         )
 
 
-def create_build_script(linker_entries: List[LinkerEntry]):
-    built_objects: Set[Path] = set()
-    img_incs = []
-
-    def build(
-        object_paths: Union[Path, List[Path]],
-        src_paths: List[Path],
-        task: str,
-        implicit=[],
-        variables: Dict[str, str] = {},
-        implicit_outputs: List[str] = [],
-    ):
-        if not isinstance(object_paths, list):
-            object_paths = [object_paths]
-
-        object_strs = [str(obj) for obj in object_paths]
-
-        if task == "cc":
-            implicit = ["img_incs"]  # all standard c files depend on all image incs
-
-        for object_path in object_paths:
-            if object_path.suffix == ".o":
-                built_objects.add(object_path)
-            ninja.build(
-                outputs=object_strs,
-                rule=task,
-                inputs=[str(s) for s in src_paths],
-                implicit=implicit,
-                variables=variables,
-                implicit_outputs=implicit_outputs,
-            )
-
-    ninja = ninja_syntax.Writer(open(str(ROOT / "build.ninja"), "w"), width=9999)
-
-    # Rules
+def create_ninja_rules(ninja: ninja_syntax.Writer):
     ninja.rule(
         "bin",
         description="bin $in",
@@ -264,7 +280,7 @@ def create_build_script(linker_entries: List[LinkerEntry]):
     ninja.rule(
         "ld",
         description="link $out",
-        command=f"{CROSS_LD} -T undefined_syms.txt -T undefined_syms_auto.txt -Map $mapfile -T $in -o $out",
+        command=f"{CROSS_LD} -T undefined_syms.txt $undefined_syms_extra -T $undefined_syms_auto -Map $mapfile -T $in -o $out",
     )
 
     ninja.rule(
@@ -310,11 +326,26 @@ def create_build_script(linker_entries: List[LinkerEntry]):
     )
 
     ninja.rule(
+        "elf_to_vpk0_obj",
+        description="vpk0_obj $out",
+        command=f"{sys.executable} tools/build/elf_to_vpk0_obj.py $in -o $out --cross {CROSS}",
+    )
+
+    ninja.rule(
         "mksprite",
         description="mksprite $in",
         command=f"{sys.executable} {MKSPRITE} $src_png -f $fmt --tile-width $tile_w --tile-height $tile_h --padding $padding_png --aligner $aligner_mode --name $sprite_name $sprite_flags -o $out",
     )
 
+
+
+def process_linker_entries(
+    linker_entries: List[LinkerEntry],
+    build,
+    img_incs: List[str],
+    overlay_builds,
+    build_vpk0_overlays: bool,
+):
     for entry in linker_entries:
         seg = entry.segment
 
@@ -594,6 +625,9 @@ def create_build_script(linker_entries: List[LinkerEntry]):
                 # Only build the .text section file for a textbin with siblings
                 build(entry.object_path, entry.src_paths, "as")
         elif seg.type == "vpk0":
+            if build_vpk0_overlays and entry.object_path in overlay_builds:
+                continue
+
             compressed = entry.object_path.with_suffix(".vpk0")
             build(compressed, entry.src_paths, "vpk0_compress")
             build(entry.object_path, [compressed], "bin")
@@ -612,12 +646,140 @@ def create_build_script(linker_entries: List[LinkerEntry]):
             print(f"ERROR: Unsupported build segment type {seg.type}")
             sys.exit(1)
 
-    ninja.build(
-        ELF_PATH,
+
+
+def create_build_script(linker_entries: List[LinkerEntry], disassemble_all: bool):
+    built_objects: Set[Path] = set()
+    img_incs = []
+    overlay_configs = get_vpk0_overlay_configs()
+    overlay_object_paths: Set[Path] = set()
+
+    def build(
+        object_paths: Union[Path, List[Path]],
+        src_paths: List[Path],
+        task: str,
+        implicit=[],
+        variables: Dict[str, str] = {},
+        implicit_outputs: List[str] = [],
+        add_to_link: bool = True,
+    ):
+        if not isinstance(object_paths, list):
+            object_paths = [object_paths]
+
+        object_strs = [str(obj) for obj in object_paths]
+
+        if task == "cc":
+            implicit = ["img_incs"]  # all standard c files depend on all image incs
+
+        for object_path in object_paths:
+            if (
+                object_path.suffix == ".o"
+                and add_to_link
+                and object_path not in overlay_object_paths
+            ):
+                built_objects.add(object_path)
+            ninja.build(
+                outputs=object_strs,
+                rule=task,
+                inputs=[str(s) for s in src_paths],
+                implicit=implicit,
+                variables=variables,
+                implicit_outputs=implicit_outputs,
+            )
+
+    ninja = ninja_syntax.Writer(open(str(ROOT / "build.ninja"), "w"), width=9999)
+    create_ninja_rules(ninja)
+
+    linker_entries = list(linker_entries)
+    overlay_builds = {}
+    queued_overlay_yamls: Set[Path] = set()
+
+    for entry in linker_entries:
+        if entry.object_path is None or entry.segment.type != "vpk0":
+            continue
+
+        overlay_config = overlay_configs.get(entry.segment.name)
+        if overlay_config is None:
+            continue
+
+        yaml_path = overlay_config["yaml_path"]
+        assert isinstance(yaml_path, Path)
+        if yaml_path in queued_overlay_yamls:
+            continue
+
+        basename = str(overlay_config["basename"])
+        overlay_entries = run_splat_split(yaml_path, disassemble_all)
+        linked_objects = sorted(
+            {
+                overlay_entry.object_path
+                for overlay_entry in overlay_entries
+                if overlay_entry.object_path is not None
+                and overlay_entry.object_path.suffix == ".o"
+            },
+            key=str,
+        )
+        overlay_object_paths.update(linked_objects)
+        overlay_builds[entry.object_path] = {
+            "entries": overlay_entries,
+            "linker_script": Path(overlay_config["ld_path"]),
+            "undefined_syms_path": overlay_config["undefined_syms_path"],
+            "undefined_syms_auto_path": Path(overlay_config["undefined_syms_auto_path"]),
+            "elf_path": Path(f"build/{basename}.elf"),
+            "bin_path": Path(f"build/{basename}.bin"),
+            "vpk0_path": Path(f"build/{basename}.vpk0"),
+            "map_path": Path(f"build/{basename}.map"),
+            "linked_objects": linked_objects,
+        }
+        queued_overlay_yamls.add(yaml_path)
+
+    process_linker_entries(linker_entries, build, img_incs, overlay_builds, True)
+
+    for overlay_build in overlay_builds.values():
+        process_linker_entries(
+            overlay_build["entries"], build, img_incs, overlay_builds, False
+        )
+
+    for object_path, overlay_build in overlay_builds.items():
+        undefined_syms_path = overlay_build["undefined_syms_path"]
+        undefined_syms_extra = (
+            f"-T {undefined_syms_path}" if isinstance(undefined_syms_path, Path) else ""
+        )
+        build(
+            overlay_build["elf_path"],
+            [overlay_build["linker_script"]],
+            "ld",
+            implicit=[str(obj) for obj in overlay_build["linked_objects"]],
+            variables={
+                "mapfile": str(overlay_build["map_path"]),
+                "undefined_syms_extra": undefined_syms_extra,
+                "undefined_syms_auto": str(overlay_build["undefined_syms_auto_path"]),
+            },
+            add_to_link=False,
+        )
+        build(overlay_build["bin_path"], [overlay_build["elf_path"]], "elf", add_to_link=False)
+        build(
+            overlay_build["vpk0_path"],
+            [overlay_build["bin_path"]],
+            "vpk0_compress",
+            add_to_link=False,
+        )
+        build(
+            object_path,
+            [overlay_build["elf_path"], overlay_build["vpk0_path"]],
+            "elf_to_vpk0_obj",
+        )
+
+    build(
+        Path(ELF_PATH),
+        [Path(LD_PATH)],
         "ld",
-        LD_PATH,
         implicit=[str(obj) for obj in built_objects],
-        variables={"mapfile": MAP_PATH},
+        variables={
+            "mapfile": MAP_PATH,
+            "undefined_syms_extra": "",
+            "undefined_syms_auto": "undefined_syms_auto.txt",
+        },
+        add_to_link=False,
     )
 
     ninja.build(
@@ -705,14 +867,10 @@ if __name__ == "__main__":
         print(f"{BASENAME}.z64 is missing!")
         sys.exit(1)
 
-    split.main(
-        [YAML_FILE], modes=["all"], verbose=False, disassemble_all=args.disassemble_all
-    )
-
-    linker_entries = split.linker_writer.entries
+    linker_entries = run_splat_split(YAML_FILE, args.disassemble_all)
 
     # graph_segments()
 
-    create_build_script(linker_entries)
+    create_build_script(linker_entries, args.disassemble_all)
 
     write_permuter_settings()
