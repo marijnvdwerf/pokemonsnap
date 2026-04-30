@@ -5743,7 +5743,7 @@ segments:
     exclusive_ram_id: unk80344780
     subsegments:
     - [auto, c, bulbasaur/model]
-    - start: 0x557120
+    - start: 0x557050
       type: .data
       dir: bulbasaur
       name: bulbasaur/model
@@ -8192,8 +8192,7 @@ segments:
       subsegments:
       - [0x734C00, snap_height_map_patches, patches]
       - [0x74CC88, snap_height_map_tree, tree]
-      - [0x76E6D0]
-    - { start: auto, type: .data, name: world/height_map, linker_section_order: .rodata }
+    - { start: 0x76E6D0, type: .data, name: world/height_map, linker_section_order: .rodata }
     - start: 0x76E6E0
       type: .data
       linker_section_order: .rodata
@@ -9662,6 +9661,7 @@ segments:
     - [0x82A640, data]
 
     - [0x82ADF0, .rodata, mew/code]
+    - [0x82AE60, .rodata, gate/code]
     - [0x82AE70, .rodata, pkmn_1037/code]
     - [0x82AE80, .rodata, evolution_controller/code]
     - [0x82AE90, .rodata, pkmn_1038/code]
@@ -10077,6 +10077,7 @@ segments:
     subsegments:
     - [0xA084B0, c]
     - [0xA08D10, .data, A084B0]
+    - [0xA08DD0, .rodata, A084B0]
     - { name: A084B0, type: bss, vram: 0x801DD240 }
   - name: main_menu
     dir: main_menu
@@ -10143,7 +10144,7 @@ segments:
     - [0xA9D6B0, data] # sprite
     - [0xA9F760, .data, A94940]
     - [0xA9FFE0, .rodata, A937C0]
-    - [0xAA0000, .rodata, A937C0]
+    - [0xAA0000, .rodata, A94480]
     - [0xAA0010, .rodata, A94940]
     - { name: bss_801E9A90, type: bss, vram: 0x801E9A90 }
   - name: intro_code
