@@ -752,7 +752,7 @@ segments:
     exclusive_ram_id: unk8011B050
     subsegments:
     - [0xA74E0, c]
-    - [0xA74F0, data]
+    - [0xA74F0, databin]
     - [auto, c, butterfree/textures]
     - [auto, c, butterfree/anim/model/anim_0]
     - [auto, c, butterfree/anim/model/anim_1]
@@ -869,7 +869,6 @@ segments:
       type: .data
       dir: butterfree
       name: butterfree/textures
-      linker_section_order: .rodata
       subsegments:
       - [0xDEDB0]
       - { start: 0xDEDB8, type: palette, name: tex0, size: 0x20 }
@@ -907,23 +906,20 @@ segments:
       - { start: 0xE0D18, type: ci8, name: tex8, flip_y: true, width: 8, height: 8 }
     - start: 0xE0D60
       type: .data
-      dir: butterfree/anim/model
+      dir: butterfree/anim/model/
       name: butterfree/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0xE0D60, snap_model_anim, anim_0]
     - start: 0xE2DF0
       type: .data
-      dir: butterfree/anim/model
+      dir: butterfree/anim/model/
       name: butterfree/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0xE2DF0, snap_model_anim, anim_1]
     - start: 0xE4E90
       type: .data
       dir: doduo
       name: doduo/textures
-      linker_section_order: .rodata
       subsegments:
       - [0xE4E90]
       - { start: 0xE4E98, type: palette, name: tex0, size: 0x20 }
@@ -959,79 +955,68 @@ segments:
       - { start: 0xE6270, type: ci4, name: tex7, flip_y: true, width: 16, height: 16 }
     - start: 0xE62F0
       type: .data
-      dir: doduo/anim/model
+      dir: doduo/anim/model/
       name: doduo/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0xE62F0, snap_model_anim, anim_0]
     - start: 0xE80A0
       type: .data
-      dir: doduo/anim/model
+      dir: doduo/anim/model/
       name: doduo/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0xE80A0, snap_model_anim, anim_1]
     - start: 0xE9050
       type: .data
-      dir: doduo/anim/model
+      dir: doduo/anim/model/
       name: doduo/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0xE9050, snap_model_anim, anim_2]
     - start: 0xEA9E0
       type: .data
-      dir: doduo/anim/model
+      dir: doduo/anim/model/
       name: doduo/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0xEA9E0, snap_model_anim, anim_3]
     - start: 0xEB030
       type: .data
-      dir: doduo/anim/model
+      dir: doduo/anim/model/
       name: doduo/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0xEB030, snap_model_anim, anim_4]
     - start: 0xEC1A0
       type: .data
-      dir: doduo/anim/model
+      dir: doduo/anim/model/
       name: doduo/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0xEC1A0, snap_model_anim, anim_5]
     - start: 0xEDBD0
       type: .data
-      dir: doduo/anim/material
+      dir: doduo/anim/material/
       name: doduo/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0xEDBD0, snap_material_anim, anim_0]
     - start: 0xEDC60
       type: .data
-      dir: doduo/anim/material
+      dir: doduo/anim/material/
       name: doduo/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0xEDC60, snap_material_anim, anim_1]
     - start: 0xEDD00
       type: .data
-      dir: doduo/anim/material
+      dir: doduo/anim/material/
       name: doduo/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0xEDD00, snap_material_anim, anim_2]
     - start: 0xEDE70
       type: .data
-      dir: doduo/anim/material
+      dir: doduo/anim/material/
       name: doduo/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0xEDE70, snap_material_anim, anim_3]
     - start: 0xEDF80
       type: .data
       dir: eevee
       name: eevee/textures
-      linker_section_order: .rodata
       subsegments:
       - [0xEDF80]
       - { start: 0xEDF88, type: palette, name: tex0, size: 0x20 }
@@ -1083,79 +1068,68 @@ segments:
       - { start: 0xF1098, type: ci4, name: tex11, flip_y: true, width: 32, height: 64 }
     - start: 0xF14A0
       type: .data
-      dir: eevee/anim/model
+      dir: eevee/anim/model/
       name: eevee/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0xF14A0, snap_model_anim, anim_0]
     - start: 0xF2220
       type: .data
-      dir: eevee/anim/model
+      dir: eevee/anim/model/
       name: eevee/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0xF2220, snap_model_anim, anim_1]
     - start: 0xF2F20
       type: .data
-      dir: eevee/anim/model
+      dir: eevee/anim/model/
       name: eevee/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0xF2F20, snap_model_anim, anim_2]
     - start: 0xF41B0
       type: .data
-      dir: eevee/anim/model
+      dir: eevee/anim/model/
       name: eevee/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0xF41B0, snap_model_anim, anim_3]
     - start: 0xF51E0
       type: .data
-      dir: eevee/anim/model
+      dir: eevee/anim/model/
       name: eevee/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0xF51E0, snap_model_anim, anim_4]
     - start: 0xF7620
       type: .data
-      dir: eevee/anim/material
+      dir: eevee/anim/material/
       name: eevee/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0xF7620, snap_material_anim, anim_0]
     - start: 0xF76E0
       type: .data
-      dir: eevee/anim/material
+      dir: eevee/anim/material/
       name: eevee/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0xF76E0, snap_material_anim, anim_1]
     - start: 0xF7790
       type: .data
-      dir: eevee/anim/material
+      dir: eevee/anim/material/
       name: eevee/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0xF7790, snap_material_anim, anim_2]
     - start: 0xF78B0
       type: .data
-      dir: eevee/anim/material
+      dir: eevee/anim/material/
       name: eevee/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0xF78B0, snap_material_anim, anim_3]
     - start: 0xF7980
       type: .data
-      dir: eevee/anim/material
+      dir: eevee/anim/material/
       name: eevee/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0xF7980, snap_material_anim, anim_4]
     - start: 0xF7AD0
       type: .data
       dir: kangaskhan
       name: kangaskhan/textures
-      linker_section_order: .rodata
       subsegments:
       - [0xF7AD0]
       - { start: 0xF7AD8, type: palette, name: tex0, size: 0x20 }
@@ -1239,107 +1213,92 @@ segments:
       - { start: 0xFA610, type: ci4, name: tex19, flip_y: true, width: 16, height: 16 }
     - start: 0xFA690
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0xFA690, snap_model_anim, anim_0]
     - start: 0xFBA40
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0xFBA40, snap_model_anim, anim_1]
     - start: 0xFCF60
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0xFCF60, snap_model_anim, anim_2]
     - start: 0x1000C0
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x1000C0, snap_model_anim, anim_3]
     - start: 0x101820
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x101820, snap_model_anim, anim_4]
     - start: 0x102A60
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x102A60, snap_model_anim, anim_5]
     - start: 0x1039B0
       type: .data
-      dir: kangaskhan/anim/model
+      dir: kangaskhan/anim/model/
       name: kangaskhan/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x1039B0, snap_model_anim, anim_6]
     - start: 0x1059F0
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x1059F0, snap_material_anim, anim_0]
     - start: 0x105A90
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x105A90, snap_material_anim, anim_1]
     - start: 0x105B30
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x105B30, snap_material_anim, anim_2]
     - start: 0x105BF0
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x105BF0, snap_material_anim, anim_3]
     - start: 0x105CA0
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x105CA0, snap_material_anim, anim_4]
     - start: 0x105D40
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x105D40, snap_material_anim, anim_5]
     - start: 0x105DD0
       type: .data
-      dir: kangaskhan/anim/material
+      dir: kangaskhan/anim/material/
       name: kangaskhan/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x105DD0, snap_material_anim, anim_6]
     - start: 0x105E80
       type: .data
       dir: snorlax
       name: snorlax/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x105E80]
       - { start: 0x105E88, type: palette, name: tex0, size: 0x20 }
@@ -1379,121 +1338,104 @@ segments:
       - { start: 0x107BB0, type: i4, name: tex12, flip_y: true, width: 32, height: 64 }
     - start: 0x107FB0
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x107FB0, snap_model_anim, anim_0]
     - start: 0x109EF0
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x109EF0, snap_model_anim, anim_1]
     - start: 0x10A770
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x10A770, snap_model_anim, anim_2]
     - start: 0x10ABD0
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x10ABD0, snap_model_anim, anim_3]
     - start: 0x10B030
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x10B030, snap_model_anim, anim_4]
     - start: 0x10B510
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x10B510, snap_model_anim, anim_5]
     - start: 0x10BD40
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x10BD40, snap_model_anim, anim_6]
     - start: 0x10C380
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x10C380, snap_model_anim, anim_7]
     - start: 0x10CDA0
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x10CDA0, snap_model_anim, anim_8]
     - start: 0x10DD10
       type: .data
-      dir: snorlax/anim/model
+      dir: snorlax/anim/model/
       name: snorlax/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x10DD10, snap_model_anim, anim_9]
     - start: 0x10E540
       type: .data
-      dir: snorlax/anim/material
+      dir: snorlax/anim/material/
       name: snorlax/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x10E540, snap_material_anim, anim_0]
     - start: 0x10E5E0
       type: .data
-      dir: snorlax/anim/material
+      dir: snorlax/anim/material/
       name: snorlax/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x10E5E0, snap_material_anim, anim_1]
     - start: 0x10E650
       type: .data
-      dir: snorlax/anim/material
+      dir: snorlax/anim/material/
       name: snorlax/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x10E650, snap_material_anim, anim_2]
     - start: 0x10E6C0
       type: .data
-      dir: snorlax/anim/material
+      dir: snorlax/anim/material/
       name: snorlax/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x10E6C0, snap_material_anim, anim_3]
     - start: 0x10E7A0
       type: .data
-      dir: snorlax/anim/material
+      dir: snorlax/anim/material/
       name: snorlax/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x10E7A0, snap_material_anim, anim_4]
     - start: 0x10E850
       type: .data
-      dir: snorlax/anim/material
+      dir: snorlax/anim/material/
       name: snorlax/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x10E850, snap_material_anim, anim_5]
     - start: 0x10E9A0
       type: .data
       dir: lapras
       name: lapras/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x10E9A0]
       - { start: 0x10E9A8, type: palette, name: tex0, size: 0x20 }
@@ -1541,23 +1483,20 @@ segments:
       - { start: 0x10FFB0, type: ci4, name: tex10, flip_y: true, width: 32, height: 32 }
     - start: 0x1101B0
       type: .data
-      dir: lapras/anim/model
+      dir: lapras/anim/model/
       name: lapras/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x1101B0, snap_model_anim, anim_0]
     - start: 0x110890
       type: .data
-      dir: lapras/anim/material
+      dir: lapras/anim/material/
       name: lapras/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x110890, snap_material_anim, anim_0]
     - start: 0x110940
       type: .data
       dir: chansey
       name: chansey/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x110940]
       - { start: 0x110948, type: palette, name: tex0, size: 0x20 }
@@ -1601,114 +1540,98 @@ segments:
       - { start: 0x1112A0, type: ci4, name: tex9, flip_y: true, width: 32, height: 32 }
     - start: 0x1114A0
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x1114A0, snap_model_anim, anim_0]
     - start: 0x112220
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x112220, snap_model_anim, anim_1]
     - start: 0x112B30
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x112B30, snap_model_anim, anim_2]
     - start: 0x1132B0
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x1132B0, snap_model_anim, anim_3]
     - start: 0x1136C0
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x1136C0, snap_model_anim, anim_4]
     - start: 0x114060
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x114060, snap_model_anim, anim_5]
     - start: 0x1146F0
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x1146F0, snap_model_anim, anim_6]
     - start: 0x115360
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x115360, snap_model_anim, anim_7]
     - start: 0x115A70
       type: .data
-      dir: chansey/anim/model
+      dir: chansey/anim/model/
       name: chansey/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x115A70, snap_model_anim, anim_8]
     - start: 0x116700
       type: .data
-      dir: chansey/anim/material
+      dir: chansey/anim/material/
       name: chansey/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x116700, snap_material_anim, anim_0]
     - start: 0x116780
       type: .data
-      dir: chansey/anim/material
+      dir: chansey/anim/material/
       name: chansey/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x116780, snap_material_anim, anim_1]
     - start: 0x116800
       type: .data
-      dir: chansey/anim/material
+      dir: chansey/anim/material/
       name: chansey/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x116800, snap_material_anim, anim_2]
     - start: 0x1168A0
       type: .data
-      dir: chansey/anim/material
+      dir: chansey/anim/material/
       name: chansey/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x1168A0, snap_material_anim, anim_3]
     - start: 0x116950
       type: .data
-      dir: chansey/anim/material
+      dir: chansey/anim/material/
       name: chansey/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x116950, snap_material_anim, anim_4]
     - start: 0x1169D0
       type: .data
-      dir: chansey/anim/material
+      dir: chansey/anim/material/
       name: chansey/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x1169D0, snap_material_anim, anim_5]
     - start: 0x116A30
       type: .data
       dir: meowth
       name: meowth/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x116A30]
       - { start: 0x116A38, type: palette, name: tex0, size: 0x200 }
@@ -1792,149 +1715,128 @@ segments:
       - { start: 0x11C928, type: ci4, name: tex19, flip_y: true, width: 32, height: 32 }
     - start: 0x11CB30
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x11CB30, snap_model_anim, anim_0]
     - start: 0x11DF70
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x11DF70, snap_model_anim, anim_1]
     - start: 0x11F0B0
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x11F0B0, snap_model_anim, anim_2]
     - start: 0x120E30
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x120E30, snap_model_anim, anim_3]
     - start: 0x121F00
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x121F00, snap_model_anim, anim_4]
     - start: 0x122500
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x122500, snap_model_anim, anim_5]
     - start: 0x123E90
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x123E90, snap_model_anim, anim_6]
     - start: 0x125080
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x125080, snap_model_anim, anim_7]
     - start: 0x126DE0
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x126DE0, snap_model_anim, anim_8]
     - start: 0x128700
       type: .data
-      dir: meowth/anim/model
+      dir: meowth/anim/model/
       name: meowth/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x128700, snap_model_anim, anim_9]
     - start: 0x129D20
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x129D20, snap_material_anim, anim_0]
     - start: 0x129E70
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x129E70, snap_material_anim, anim_1]
     - start: 0x129F80
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x129F80, snap_material_anim, anim_2]
     - start: 0x12A0F0
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x12A0F0, snap_material_anim, anim_3]
     - start: 0x12A210
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x12A210, snap_material_anim, anim_4]
     - start: 0x12A2E0
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x12A2E0, snap_material_anim, anim_5]
     - start: 0x12A480
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x12A480, snap_material_anim, anim_6]
     - start: 0x12A5A0
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x12A5A0, snap_material_anim, anim_7]
     - start: 0x12A6F0
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x12A6F0, snap_material_anim, anim_8]
     - start: 0x12A880
       type: .data
-      dir: meowth/anim/material
+      dir: meowth/anim/material/
       name: meowth/anim/material/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x12A880, snap_material_anim, anim_9]
     - start: 0x12A980
       type: .data
       dir: pidgey
       name: pidgey/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x12A980]
       - { start: 0x12A988, type: palette, name: tex0, size: 0x20 }
@@ -1982,58 +1884,50 @@ segments:
       - { start: 0x12CB50, type: ci4, name: tex10, flip_y: true, width: 32, height: 32 }
     - start: 0x12CD50
       type: .data
-      dir: pidgey/anim/model
+      dir: pidgey/anim/model/
       name: pidgey/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x12CD50, snap_model_anim, anim_0]
     - start: 0x12E710
       type: .data
-      dir: pidgey/anim/model
+      dir: pidgey/anim/model/
       name: pidgey/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x12E710, snap_model_anim, anim_1]
     - start: 0x130F10
       type: .data
-      dir: pidgey/anim/model
+      dir: pidgey/anim/model/
       name: pidgey/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x130F10, snap_model_anim, anim_2]
     - start: 0x132B60
       type: .data
-      dir: pidgey/anim/model
+      dir: pidgey/anim/model/
       name: pidgey/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x132B60, snap_model_anim, anim_3]
     - start: 0x135150
       type: .data
-      dir: pidgey/anim/material
+      dir: pidgey/anim/material/
       name: pidgey/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x135150, snap_material_anim, anim_0]
     - start: 0x1351E0
       type: .data
-      dir: pidgey/anim/material
+      dir: pidgey/anim/material/
       name: pidgey/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x1351E0, snap_material_anim, anim_1]
     - start: 0x135280
       type: .data
-      dir: pidgey/anim/material
+      dir: pidgey/anim/material/
       name: pidgey/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x135280, snap_material_anim, anim_2]
     - start: 0x135310
       type: .data
       dir: scyther
       name: scyther/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x135310]
       - { start: 0x135318, type: palette, name: tex0, size: 0x128 }
@@ -2073,44 +1967,38 @@ segments:
       - { start: 0x136A58, type: ci4, name: tex8, flip_y: true, width: 64, height: 32 }
     - start: 0x136E60
       type: .data
-      dir: scyther/anim/model
+      dir: scyther/anim/model/
       name: scyther/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x136E60, snap_model_anim, anim_0]
     - start: 0x137AA0
       type: .data
-      dir: scyther/anim/model
+      dir: scyther/anim/model/
       name: scyther/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x137AA0, snap_model_anim, anim_1]
     - start: 0x1386E0
       type: .data
-      dir: scyther/anim/model
+      dir: scyther/anim/model/
       name: scyther/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x1386E0, snap_model_anim, anim_2]
     - start: 0x139420
       type: .data
-      dir: scyther/anim/model
+      dir: scyther/anim/model/
       name: scyther/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x139420, snap_model_anim, anim_3]
     - start: 0x13AC20
       type: .data
-      dir: scyther/anim/model
+      dir: scyther/anim/model/
       name: scyther/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x13AC20, snap_model_anim, anim_4]
     - start: 0x13B940
       type: .data
-      dir: scyther/anim/model
+      dir: scyther/anim/model/
       name: scyther/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x13B940, snap_model_anim, anim_5]
     - { name: bss_801B02F0, type: bss, vram: 0x801B02F0 }
@@ -3261,10 +3149,10 @@ segments:
     - [auto, c, articuno/anim/material/anim_1]
     - [auto, c, articuno/anim/material/anim_2]
     - [auto, c, unk/textures]
-    - [auto, c, 601/anim/model/anim_0]
-    - [auto, c, 601/anim/model/anim_1]
-    - [auto, c, 601/anim/model/anim_2]
-    - [auto, c, 601/anim/model/anim_3]
+    - [auto, c, unk601/anim/model/anim_0]
+    - [auto, c, unk601/anim/model/anim_1]
+    - [auto, c, unk601/anim/model/anim_2]
+    - [auto, c, unk601/anim/model/anim_3]
     - [auto, c, ditto/textures]
     - [auto, c, ditto/anim/model/anim_0]
     - [auto, c, ditto/anim/model/anim_1]
@@ -3323,12 +3211,11 @@ segments:
     - [auto, c, weepinbell/anim/material/anim_2]
     - [auto, c, weepinbell/anim/material/anim_3]
     - [auto, c, weepinbell/anim/material/anim_4]
-    - [0x1F5E80, data]
+    - [0x1F5E80, databin]
     - start: 0x220000
       type: .data
       dir: grimer
       name: grimer/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x220000]
       - { start: 0x220008, type: rgba16, name: tex0, flip_y: true, width: 32, height: 64 }
@@ -3342,79 +3229,68 @@ segments:
       - { start: 0x222848, type: ci4, name: tex3, flip_y: true, width: 64, height: 64 }
     - start: 0x223050
       type: .data
-      dir: grimer/anim/model
+      dir: grimer/anim/model/
       name: grimer/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x223050, snap_model_anim, anim_0]
     - start: 0x223EA0
       type: .data
-      dir: grimer/anim/model
+      dir: grimer/anim/model/
       name: grimer/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x223EA0, snap_model_anim, anim_1]
     - start: 0x224A40
       type: .data
-      dir: grimer/anim/model
+      dir: grimer/anim/model/
       name: grimer/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x224A40, snap_model_anim, anim_2]
     - start: 0x2256F0
       type: .data
-      dir: grimer/anim/model
+      dir: grimer/anim/model/
       name: grimer/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2256F0, snap_model_anim, anim_3]
     - start: 0x226130
       type: .data
-      dir: grimer/anim/model
+      dir: grimer/anim/model/
       name: grimer/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x226130, snap_model_anim, anim_4]
     - start: 0x2272A0
       type: .data
-      dir: grimer/anim/material
+      dir: grimer/anim/material/
       name: grimer/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2272A0, snap_material_anim, anim_0]
     - start: 0x227670
       type: .data
-      dir: grimer/anim/material
+      dir: grimer/anim/material/
       name: grimer/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x227670, snap_material_anim, anim_1]
     - start: 0x227A40
       type: .data
-      dir: grimer/anim/material
+      dir: grimer/anim/material/
       name: grimer/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x227A40, snap_material_anim, anim_2]
     - start: 0x227D50
       type: .data
-      dir: grimer/anim/material
+      dir: grimer/anim/material/
       name: grimer/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x227D50, snap_material_anim, anim_3]
     - start: 0x2281C0
       type: .data
-      dir: grimer/anim/material
+      dir: grimer/anim/material/
       name: grimer/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2281C0, snap_material_anim, anim_4]
     - start: 0x228510
       type: .data
       dir: muk
       name: muk/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x228510]
       - { start: 0x228518, type: rgba16, name: tex0, flip_y: true, width: 32, height: 64 }
@@ -3436,79 +3312,68 @@ segments:
       - { start: 0x229BF8, type: ci4, name: tex3, flip_y: true, width: 64, height: 64 }
     - start: 0x22A400
       type: .data
-      dir: muk/anim/model
+      dir: muk/anim/model/
       name: muk/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x22A400, snap_model_anim, anim_0]
     - start: 0x22A9D0
       type: .data
-      dir: muk/anim/model
+      dir: muk/anim/model/
       name: muk/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x22A9D0, snap_model_anim, anim_1]
     - start: 0x22AF80
       type: .data
-      dir: muk/anim/model
+      dir: muk/anim/model/
       name: muk/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x22AF80, snap_model_anim, anim_2]
     - start: 0x22B5D0
       type: .data
-      dir: muk/anim/model
+      dir: muk/anim/model/
       name: muk/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x22B5D0, snap_model_anim, anim_3]
     - start: 0x22BF10
       type: .data
-      dir: muk/anim/model
+      dir: muk/anim/model/
       name: muk/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x22BF10, snap_model_anim, anim_4]
     - start: 0x22C950
       type: .data
-      dir: muk/anim/material
+      dir: muk/anim/material/
       name: muk/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x22C950, snap_material_anim, anim_0]
     - start: 0x22CC70
       type: .data
-      dir: muk/anim/material
+      dir: muk/anim/material/
       name: muk/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x22CC70, snap_material_anim, anim_1]
     - start: 0x22CFD0
       type: .data
-      dir: muk/anim/material
+      dir: muk/anim/material/
       name: muk/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x22CFD0, snap_material_anim, anim_2]
     - start: 0x22D2F0
       type: .data
-      dir: muk/anim/material
+      dir: muk/anim/material/
       name: muk/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x22D2F0, snap_material_anim, anim_3]
     - start: 0x22D610
       type: .data
-      dir: muk/anim/material
+      dir: muk/anim/material/
       name: muk/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x22D610, snap_material_anim, anim_4]
     - start: 0x22D930
       type: .data
       dir: koffing
       name: koffing/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x22D930]
       - { start: 0x22D938, type: i8, name: tex0, flip_y: true, width: 32, height: 32 }
@@ -3564,93 +3429,80 @@ segments:
       - { start: 0x231160, type: ci4, name: tex14, flip_y: true, width: 64, height: 32 }
     - start: 0x231560
       type: .data
-      dir: koffing/anim/model
+      dir: koffing/anim/model/
       name: koffing/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x231560, snap_model_anim, anim_0]
     - start: 0x2328D0
       type: .data
-      dir: koffing/anim/model
+      dir: koffing/anim/model/
       name: koffing/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2328D0, snap_model_anim, anim_1]
     - start: 0x233470
       type: .data
-      dir: koffing/anim/model
+      dir: koffing/anim/model/
       name: koffing/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x233470, snap_model_anim, anim_2]
     - start: 0x233EA0
       type: .data
-      dir: koffing/anim/model
+      dir: koffing/anim/model/
       name: koffing/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x233EA0, snap_model_anim, anim_3]
     - start: 0x236130
       type: .data
-      dir: koffing/anim/model
+      dir: koffing/anim/model/
       name: koffing/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x236130, snap_model_anim, anim_4]
     - start: 0x237080
       type: .data
-      dir: koffing/anim/model
+      dir: koffing/anim/model/
       name: koffing/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x237080, snap_model_anim, anim_5]
     - start: 0x239AA0
       type: .data
-      dir: koffing/anim/material
+      dir: koffing/anim/material/
       name: koffing/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x239AA0, snap_material_anim, anim_0]
     - start: 0x239FF0
       type: .data
-      dir: koffing/anim/material
+      dir: koffing/anim/material/
       name: koffing/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x239FF0, snap_material_anim, anim_1]
     - start: 0x23A320
       type: .data
-      dir: koffing/anim/material
+      dir: koffing/anim/material/
       name: koffing/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x23A320, snap_material_anim, anim_2]
     - start: 0x23A6C0
       type: .data
-      dir: koffing/anim/material
+      dir: koffing/anim/material/
       name: koffing/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x23A6C0, snap_material_anim, anim_3]
     - start: 0x23AD40
       type: .data
-      dir: koffing/anim/material
+      dir: koffing/anim/material/
       name: koffing/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x23AD40, snap_material_anim, anim_4]
     - start: 0x23B1F0
       type: .data
-      dir: koffing/anim/material
+      dir: koffing/anim/material/
       name: koffing/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x23B1F0, snap_material_anim, anim_5]
     - start: 0x23B830
       type: .data
       dir: articuno
       name: articuno/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x23B830]
       - { start: 0x23B838, type: palette, name: tex0, size: 0x20 }
@@ -3706,51 +3558,44 @@ segments:
       - { start: 0x23DD18, type: ci4, name: tex12, flip_y: true, width: 128, height: 16 }
     - start: 0x23E120
       type: .data
-      dir: articuno/anim/model
+      dir: articuno/anim/model/
       name: articuno/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x23E120, snap_model_anim, anim_0]
     - start: 0x23EBB0
       type: .data
-      dir: articuno/anim/model
+      dir: articuno/anim/model/
       name: articuno/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x23EBB0, snap_model_anim, anim_1]
     - start: 0x240490
       type: .data
-      dir: articuno/anim/model
+      dir: articuno/anim/model/
       name: articuno/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x240490, snap_model_anim, anim_2]
     - start: 0x2445B0
       type: .data
-      dir: articuno/anim/material
+      dir: articuno/anim/material/
       name: articuno/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2445B0, snap_material_anim, anim_0]
     - start: 0x244640
       type: .data
-      dir: articuno/anim/material
+      dir: articuno/anim/material/
       name: articuno/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x244640, snap_material_anim, anim_1]
     - start: 0x2446D0
       type: .data
-      dir: articuno/anim/material
+      dir: articuno/anim/material/
       name: articuno/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2446D0, snap_material_anim, anim_2]
     - start: 0x2447A0
       type: .data
       dir: unk
       name: unk/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2447A0]
       - { start: 0x2447A8, type: i8, name: tex0, flip_y: true, width: 64, height: 64 }
@@ -3758,38 +3603,33 @@ segments:
       - { start: 0x2457B0, type: rgba16, name: tex1, flip_y: true, width: 32, height: 32 }
     - start: 0x245FB0
       type: .data
-      dir: 601/anim/model
-      name: 601/anim/model/anim_0
-      linker_section_order: .rodata
+      dir: unk601/anim/model/
+      name: unk601/anim/model/anim_0
       subsegments:
       - [0x245FB0, snap_model_anim, anim_0]
     - start: 0x246100
       type: .data
-      dir: 601/anim/model
-      name: 601/anim/model/anim_1
-      linker_section_order: .rodata
+      dir: unk601/anim/model/
+      name: unk601/anim/model/anim_1
       subsegments:
       - [0x246100, snap_model_anim, anim_1]
     - start: 0x2462C0
       type: .data
-      dir: 601/anim/model
-      name: 601/anim/model/anim_2
-      linker_section_order: .rodata
+      dir: unk601/anim/model/
+      name: unk601/anim/model/anim_2
       subsegments:
       - [0x2462C0, snap_model_anim, anim_2]
     - start: 0x2464C0
       type: .data
-      dir: 601/anim/model
-      name: 601/anim/model/anim_3
-      linker_section_order: .rodata
+      dir: unk601/anim/model/
+      name: unk601/anim/model/anim_3
       subsegments:
       - [0x2464C0, snap_model_anim, anim_3]
-    - [0x246530, rodatabin]
+    - [0x246530, databin]
     - start: 0x2492C0
       type: .data
       dir: ditto
       name: ditto/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2492C0]
       - { start: 0x2492C8, type: palette, name: tex0, size: 0x30 }
@@ -3797,72 +3637,62 @@ segments:
       - { start: 0x249300, type: ci8, name: tex0, flip_y: true, width: 32, height: 32 }
     - start: 0x249700
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x249700, snap_model_anim, anim_0]
     - start: 0x24A210
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x24A210, snap_model_anim, anim_1]
     - start: 0x24ABC0
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x24ABC0, snap_model_anim, anim_2]
     - start: 0x24D320
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x24D320, snap_model_anim, anim_3]
     - start: 0x24E1C0
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x24E1C0, snap_model_anim, anim_4]
     - start: 0x24EAB0
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x24EAB0, snap_model_anim, anim_5]
     - start: 0x24F9F0
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x24F9F0, snap_model_anim, anim_6]
     - start: 0x2509D0
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x2509D0, snap_model_anim, anim_7]
     - start: 0x252200
       type: .data
-      dir: ditto/anim/model
+      dir: ditto/anim/model/
       name: ditto/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x252200, snap_model_anim, anim_8]
     - start: 0x2535D0
       type: .data
       dir: jigglypuff
       name: jigglypuff/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2535D0]
       - { start: 0x2535D8, type: palette, name: tex0, size: 0x20 }
@@ -3910,228 +3740,200 @@ segments:
       - { start: 0x2558F0, type: ci4, name: tex16, flip_y: true, width: 16, height: 16 }
     - start: 0x255970
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x255970, snap_model_anim, anim_0]
     - start: 0x256B20
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x256B20, snap_model_anim, anim_1]
     - start: 0x257CB0
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x257CB0, snap_model_anim, anim_2]
     - start: 0x2597D0
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2597D0, snap_model_anim, anim_3]
     - start: 0x25A980
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x25A980, snap_model_anim, anim_4]
     - start: 0x25B600
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x25B600, snap_model_anim, anim_5]
     - start: 0x25C850
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x25C850, snap_model_anim, anim_6]
     - start: 0x25DF90
       type: .data
-      dir: jigglypuff/anim/model
+      dir: jigglypuff/anim/model/
       name: jigglypuff/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x25DF90, snap_model_anim, anim_7]
     - start: 0x25EAA0
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x25EAA0, snap_material_anim, anim_0]
     - start: 0x25EBE0
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x25EBE0, snap_material_anim, anim_1]
     - start: 0x25EDA0
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x25EDA0, snap_material_anim, anim_2]
     - start: 0x25EFB0
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x25EFB0, snap_material_anim, anim_3]
     - start: 0x25F180
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x25F180, snap_material_anim, anim_4]
     - start: 0x25F2C0
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x25F2C0, snap_material_anim, anim_5]
     - start: 0x25F530
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x25F530, snap_material_anim, anim_6]
     - start: 0x25F790
       type: .data
-      dir: jigglypuff/anim/material
+      dir: jigglypuff/anim/material/
       name: jigglypuff/anim/material/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x25F790, snap_material_anim, anim_7]
     - start: 0x25F8F0
       type: .data
-      name: jynx/textures
       dir: jynx
-      linker_section_order: .rodata
+      name: jynx/textures
       subsegments:
       - [0x25F8F0]
-      - { start: 0x25F8F8, type: rgba16, width: 64, height: 32, name: "tex_arm" }
+      - { start: 0x25F8F8, type: rgba16, name: tex_arm, flip_y: true, width: 64, height: 32 }
       - [0x2608F8]
-      - { start: 0x260900, type: palette, name: "tex_torso" }
+      - { start: 0x260900, type: palette, name: tex_torso, size: 0x20 }
       - [0x260920]
-      - { start: 0x260928, type: ci4, width: 64, height: 32, name: "tex_torso" }
+      - { start: 0x260928, type: ci4, name: tex_torso, flip_y: true, width: 64, height: 32 }
       - [0x260D28]
-      - { start: 0x260D30, type: palette, name: "tex_eye_0" }
+      - { start: 0x260D30, type: palette, name: tex_eye_0, size: 0x20 }
       - [0x260D50]
-      - { start: 0x260D58, type: ci4, width: 32, height: 32, name: "tex_eye_0" }
+      - { start: 0x260D58, type: ci4, name: tex_eye_0, flip_y: true, width: 32, height: 32 }
       - [0x260F58]
-      - { start: 0x260F60, type: palette, name: "tex_eye_1" }
+      - { start: 0x260F60, type: palette, name: tex_eye_1, size: 0x20 }
       - [0x260F80]
-      - { start: 0x260F88, type: ci4, width: 32, height: 32, name: "tex_eye_1" }
+      - { start: 0x260F88, type: ci4, name: tex_eye_1, flip_y: true, width: 32, height: 32 }
       - [0x261188]
-      - { start: 0x261190, type: palette, name: "tex_eye_2" }
+      - { start: 0x261190, type: palette, name: tex_eye_2, size: 0x20 }
       - [0x2611B0]
-      - { start: 0x2611B8, type: ci4, width: 32, height: 32, name: "tex_eye_2" }
+      - { start: 0x2611B8, type: ci4, name: tex_eye_2, flip_y: true, width: 32, height: 32 }
       - [0x2613B8]
-      - { start: 0x2613C0, type: rgba16, width: 32, height: 32, name: "tex_hair" }
+      - { start: 0x2613C0, type: rgba16, name: tex_hair, flip_y: true, width: 32, height: 32 }
       - [0x261BC0]
-      - { start: 0x261BC8, type: rgba16, width: 64, height: 32, name: "tex_hair_2" }
+      - { start: 0x261BC8, type: rgba16, name: tex_hair_2, flip_y: true, width: 64, height: 32 }
       - [0x262BC8]
-      - { start: 0x262BD0, type: rgba16, width: 32, height: 64, name: "tex_hair_3" }
+      - { start: 0x262BD0, type: rgba16, name: tex_hair_3, flip_y: true, width: 32, height: 64 }
       - [0x263BD0]
-      - { start: 0x263BD8, type: rgba16, width: 64, height: 32, name: "tex_lips" }
+      - { start: 0x263BD8, type: rgba16, name: tex_lips, flip_y: true, width: 64, height: 32 }
       - [0x264BD8]
-      - { start: 0x264BE0, type: palette, name: "tex_dress" }
+      - { start: 0x264BE0, type: palette, name: tex_dress, size: 0x20 }
       - [0x264C00]
-      - { start: 0x264C08, type: ci4, width: 32, height: 32, name: "tex_dress" }
+      - { start: 0x264C08, type: ci4, name: tex_dress, flip_y: true, width: 32, height: 32 }
       - [0x264E08]
     - start: 0x264E10
       type: .data
-      dir: jynx/anim/model
+      dir: jynx/anim/model/
       name: jynx/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x264E10, snap_model_anim, anim_0]
     - start: 0x266F10
       type: .data
-      dir: jynx/anim/model
+      dir: jynx/anim/model/
       name: jynx/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x266F10, snap_model_anim, anim_1]
     - start: 0x267E20
       type: .data
-      dir: jynx/anim/model
+      dir: jynx/anim/model/
       name: jynx/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x267E20, snap_model_anim, anim_2]
     - start: 0x269250
       type: .data
-      dir: jynx/anim/model
+      dir: jynx/anim/model/
       name: jynx/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x269250, snap_model_anim, anim_3]
     - start: 0x26A280
       type: .data
-      dir: jynx/anim/model
+      dir: jynx/anim/model/
       name: jynx/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x26A280, snap_model_anim, anim_4]
     - start: 0x26AD30
       type: .data
-      dir: jynx/anim/model
+      dir: jynx/anim/model/
       name: jynx/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x26AD30, snap_model_anim, anim_5]
     - start: 0x26C050
       type: .data
-      dir: jynx/anim/material
+      dir: jynx/anim/material/
       name: jynx/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x26C050, snap_material_anim, anim_0]
     - start: 0x26C0C0
       type: .data
-      dir: jynx/anim/material
+      dir: jynx/anim/material/
       name: jynx/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x26C0C0, snap_material_anim, anim_1]
     - start: 0x26C170
       type: .data
-      dir: jynx/anim/material
+      dir: jynx/anim/material/
       name: jynx/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x26C170, snap_material_anim, anim_2]
     - start: 0x26C1F0
       type: .data
-      dir: jynx/anim/material
+      dir: jynx/anim/material/
       name: jynx/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x26C1F0, snap_material_anim, anim_3]
     - start: 0x26C260
       type: .data
       dir: victreebel
       name: victreebel/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x26C260]
       - { start: 0x26C268, type: i8, name: tex0, flip_y: true, width: 32, height: 32 }
@@ -4183,51 +3985,44 @@ segments:
       - { start: 0x26E4A0, type: rgba16, name: tex13, flip_y: true, width: 32, height: 32 }
     - start: 0x26ECA0
       type: .data
-      dir: victreebel/anim/model
+      dir: victreebel/anim/model/
       name: victreebel/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x26ECA0, snap_model_anim, anim_0]
     - start: 0x26F770
       type: .data
-      dir: victreebel/anim/model
+      dir: victreebel/anim/model/
       name: victreebel/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x26F770, snap_model_anim, anim_1]
     - start: 0x270580
       type: .data
-      dir: victreebel/anim/model
+      dir: victreebel/anim/model/
       name: victreebel/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x270580, snap_model_anim, anim_2]
     - start: 0x271000
       type: .data
-      dir: victreebel/anim/material
+      dir: victreebel/anim/material/
       name: victreebel/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x271000, snap_material_anim, anim_0]
     - start: 0x271130
       type: .data
-      dir: victreebel/anim/material
+      dir: victreebel/anim/material/
       name: victreebel/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x271130, snap_material_anim, anim_1]
     - start: 0x271280
       type: .data
-      dir: victreebel/anim/material
+      dir: victreebel/anim/material/
       name: victreebel/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x271280, snap_material_anim, anim_2]
     - start: 0x271460
       type: .data
       dir: weepinbell
       name: weepinbell/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x271460]
       - { start: 0x271468, type: rgba16, name: tex0, flip_y: true, width: 4, height: 4 }
@@ -4261,86 +4056,74 @@ segments:
       - { start: 0x2737F8, type: ci4, name: tex8, flip_y: true, width: 64, height: 64 }
     - start: 0x274000
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x274000, snap_model_anim, anim_0]
     - start: 0x2749C0
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2749C0, snap_model_anim, anim_1]
     - start: 0x2757C0
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2757C0, snap_model_anim, anim_2]
     - start: 0x275FD0
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x275FD0, snap_model_anim, anim_3]
     - start: 0x276FF0
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x276FF0, snap_model_anim, anim_4]
     - start: 0x278980
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x278980, snap_model_anim, anim_5]
     - start: 0x279830
       type: .data
-      dir: weepinbell/anim/model
+      dir: weepinbell/anim/model/
       name: weepinbell/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x279830, snap_model_anim, anim_6]
     - start: 0x27A440
       type: .data
-      dir: weepinbell/anim/material
+      dir: weepinbell/anim/material/
       name: weepinbell/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x27A440, snap_material_anim, anim_0]
     - start: 0x27A4E0
       type: .data
-      dir: weepinbell/anim/material
+      dir: weepinbell/anim/material/
       name: weepinbell/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x27A4E0, snap_material_anim, anim_1]
     - start: 0x27A670
       type: .data
-      dir: weepinbell/anim/material
+      dir: weepinbell/anim/material/
       name: weepinbell/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x27A670, snap_material_anim, anim_2]
     - start: 0x27A750
       type: .data
-      dir: weepinbell/anim/material
+      dir: weepinbell/anim/material/
       name: weepinbell/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x27A750, snap_material_anim, anim_3]
     - start: 0x27A910
       type: .data
-      dir: weepinbell/anim/material
+      dir: weepinbell/anim/material/
       name: weepinbell/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x27A910, snap_material_anim, anim_4]
     - { name: bss_801AEDD0, type: bss, vram: 0x801AEDD0 }
@@ -4638,7 +4421,7 @@ segments:
     exclusive_ram_id: unk8012A0C0
     subsegments:
     - [0x29A190, c]
-    - [0x29A1A0, data]
+    - [0x29A1A0, databin]
     - [auto, c, psyduck/textures]
     - [auto, c, psyduck/anim/model/anim_0]
     - [auto, c, psyduck/anim/model/anim_1]
@@ -4727,8 +4510,8 @@ segments:
     - [auto, c, shellder/anim/model/anim_0]
     - [auto, c, shellder/anim/material/anim_0]
     - [auto, c, shellder2/textures]
-    - [auto, c, 603/anim/model/anim_0]
-    - [auto, c, 603/anim/model/anim_1]
+    - [auto, c, unk603/anim/model/anim_0]
+    - [auto, c, unk603/anim/model/anim_1]
     - [auto, c, metapod/textures]
     - [auto, c, metapod/anim/model/anim_0]
     - [auto, c, metapod/anim/model/anim_1]
@@ -4761,7 +4544,6 @@ segments:
       type: .data
       dir: psyduck
       name: psyduck/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2D0AF0]
       - { start: 0x2D0AF8, type: palette, name: tex0, size: 0x20 }
@@ -4781,65 +4563,56 @@ segments:
       - { start: 0x2D2150, type: ci8, name: tex3, flip_y: true, width: 64, height: 32 }
     - start: 0x2D2950
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2D2950, snap_model_anim, anim_0]
     - start: 0x2D3330
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2D3330, snap_model_anim, anim_1]
     - start: 0x2D3D00
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2D3D00, snap_model_anim, anim_2]
     - start: 0x2D44E0
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2D44E0, snap_model_anim, anim_3]
     - start: 0x2D4AA0
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2D4AA0, snap_model_anim, anim_4]
     - start: 0x2D54A0
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x2D54A0, snap_model_anim, anim_5]
     - start: 0x2D6570
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x2D6570, snap_model_anim, anim_6]
     - start: 0x2D6B60
       type: .data
-      dir: psyduck/anim/model
+      dir: psyduck/anim/model/
       name: psyduck/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x2D6B60, snap_model_anim, anim_7]
     - start: 0x2D74E0
       type: .data
       dir: poliwag
       name: poliwag/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2D74E0]
       - { start: 0x2D74E8, type: palette, name: tex0, size: 0x200 }
@@ -4857,93 +4630,80 @@ segments:
       - { start: 0x2D90B8, type: ci8, name: tex3, flip_y: true, width: 48, height: 42 }
     - start: 0x2D98A0
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2D98A0, snap_model_anim, anim_0]
     - start: 0x2DA5D0
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2DA5D0, snap_model_anim, anim_1]
     - start: 0x2DBA00
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2DBA00, snap_model_anim, anim_2]
     - start: 0x2DC410
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2DC410, snap_model_anim, anim_3]
     - start: 0x2DD320
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2DD320, snap_model_anim, anim_4]
     - start: 0x2DDB90
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x2DDB90, snap_model_anim, anim_5]
     - start: 0x2DE4C0
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x2DE4C0, snap_model_anim, anim_6]
     - start: 0x2DE870
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x2DE870, snap_model_anim, anim_7]
     - start: 0x2DF370
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x2DF370, snap_model_anim, anim_8]
     - start: 0x2DFE80
       type: .data
-      dir: poliwag/anim/model
+      dir: poliwag/anim/model/
       name: poliwag/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x2DFE80, snap_model_anim, anim_9]
     - start: 0x2E0520
       type: .data
-      dir: poliwag/anim/material
+      dir: poliwag/anim/material/
       name: poliwag/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2E0520, snap_material_anim, anim_0]
     - start: 0x2E0590
       type: .data
-      dir: poliwag/anim/material
+      dir: poliwag/anim/material/
       name: poliwag/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2E0590, snap_material_anim, anim_1]
     - start: 0x2E0600
       type: .data
       dir: cloyster
       name: cloyster/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2E0600]
       - { start: 0x2E0608, type: palette, name: tex0, size: 0x10 }
@@ -4979,37 +4739,32 @@ segments:
       - { start: 0x2E1510, type: ci4, name: tex8, flip_y: true, width: 16, height: 8 }
     - start: 0x2E1550
       type: .data
-      dir: cloyster/anim/model
+      dir: cloyster/anim/model/
       name: cloyster/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2E1550, snap_model_anim, anim_0]
     - start: 0x2E1850
       type: .data
-      dir: cloyster/anim/model
+      dir: cloyster/anim/model/
       name: cloyster/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2E1850, snap_model_anim, anim_1]
     - start: 0x2E1BC0
       type: .data
-      dir: unk/anim/material
+      dir: unk/anim/material/
       name: unk/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2E1BC0, snap_material_anim, anim_0]
     - start: 0x2E1C60
       type: .data
-      dir: unk/anim/material
+      dir: unk/anim/material/
       name: unk/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2E1C60, snap_material_anim, anim_1]
     - start: 0x2E1CF0
       type: .data
       dir: porygon
       name: porygon/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2E1CF0]
       - { start: 0x2E1CF8, type: palette, name: tex0, size: 0x20 }
@@ -5037,324 +4792,278 @@ segments:
       - { start: 0x2E2BD0, type: ci4, name: tex7, flip_y: true, width: 32, height: 32 }
     - start: 0x2E2DD0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2E2DD0, snap_model_anim, anim_0]
     - start: 0x2E2FF0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2E2FF0, snap_model_anim, anim_1]
     - start: 0x2E3210
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2E3210, snap_model_anim, anim_2]
     - start: 0x2E3430
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2E3430, snap_model_anim, anim_3]
     - start: 0x2E3800
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2E3800, snap_model_anim, anim_4]
     - start: 0x2E3BD0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x2E3BD0, snap_model_anim, anim_5]
     - start: 0x2E3FA0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x2E3FA0, snap_model_anim, anim_6]
     - start: 0x2E43B0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x2E43B0, snap_model_anim, anim_7]
     - start: 0x2E47C0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x2E47C0, snap_model_anim, anim_8]
     - start: 0x2E4BD0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x2E4BD0, snap_model_anim, anim_9]
     - start: 0x2E4E30
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_10
-      linker_section_order: .rodata
       subsegments:
       - [0x2E4E30, snap_model_anim, anim_10]
     - start: 0x2E5090
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_11
-      linker_section_order: .rodata
       subsegments:
       - [0x2E5090, snap_model_anim, anim_11]
     - start: 0x2E52F0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_12
-      linker_section_order: .rodata
       subsegments:
       - [0x2E52F0, snap_model_anim, anim_12]
     - start: 0x2E5D80
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_13
-      linker_section_order: .rodata
       subsegments:
       - [0x2E5D80, snap_model_anim, anim_13]
     - start: 0x2E6810
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_14
-      linker_section_order: .rodata
       subsegments:
       - [0x2E6810, snap_model_anim, anim_14]
     - start: 0x2E72A0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_15
-      linker_section_order: .rodata
       subsegments:
       - [0x2E72A0, snap_model_anim, anim_15]
     - start: 0x2E7A70
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_16
-      linker_section_order: .rodata
       subsegments:
       - [0x2E7A70, snap_model_anim, anim_16]
     - start: 0x2E8240
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_17
-      linker_section_order: .rodata
       subsegments:
       - [0x2E8240, snap_model_anim, anim_17]
     - start: 0x2E84D0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_18
-      linker_section_order: .rodata
       subsegments:
       - [0x2E84D0, snap_model_anim, anim_18]
     - start: 0x2E88F0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_19
-      linker_section_order: .rodata
       subsegments:
       - [0x2E88F0, snap_model_anim, anim_19]
     - start: 0x2E8D10
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_20
-      linker_section_order: .rodata
       subsegments:
       - [0x2E8D10, snap_model_anim, anim_20]
     - start: 0x2E93E0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_21
-      linker_section_order: .rodata
       subsegments:
       - [0x2E93E0, snap_model_anim, anim_21]
     - start: 0x2E9AB0
       type: .data
-      dir: porygon/anim/model
+      dir: porygon/anim/model/
       name: porygon/anim/model/anim_22
-      linker_section_order: .rodata
       subsegments:
       - [0x2E9AB0, snap_model_anim, anim_22]
     - start: 0x2EA180
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA180, snap_material_anim, anim_0]
     - start: 0x2EA2C0
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA2C0, snap_material_anim, anim_1]
     - start: 0x2EA400
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA400, snap_material_anim, anim_2]
     - start: 0x2EA540
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA540, snap_material_anim, anim_3]
     - start: 0x2EA690
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA690, snap_material_anim, anim_4]
     - start: 0x2EA7E0
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA7E0, snap_material_anim, anim_5]
     - start: 0x2EA930
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x2EA930, snap_material_anim, anim_6]
     - start: 0x2EAA50
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x2EAA50, snap_material_anim, anim_7]
     - start: 0x2EAB70
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x2EAB70, snap_material_anim, anim_8]
     - start: 0x2EAC90
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x2EAC90, snap_material_anim, anim_9]
     - start: 0x2EAD80
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_10
-      linker_section_order: .rodata
       subsegments:
       - [0x2EAD80, snap_material_anim, anim_10]
     - start: 0x2EAE70
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_11
-      linker_section_order: .rodata
       subsegments:
       - [0x2EAE70, snap_material_anim, anim_11]
     - start: 0x2EAF60
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_12
-      linker_section_order: .rodata
       subsegments:
       - [0x2EAF60, snap_material_anim, anim_12]
     - start: 0x2EB0A0
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_13
-      linker_section_order: .rodata
       subsegments:
       - [0x2EB0A0, snap_material_anim, anim_13]
     - start: 0x2EB1E0
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_14
-      linker_section_order: .rodata
       subsegments:
       - [0x2EB1E0, snap_material_anim, anim_14]
     - start: 0x2EB320
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_15
-      linker_section_order: .rodata
       subsegments:
       - [0x2EB320, snap_material_anim, anim_15]
     - start: 0x2EB650
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_16
-      linker_section_order: .rodata
       subsegments:
       - [0x2EB650, snap_material_anim, anim_16]
     - start: 0x2EB980
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_17
-      linker_section_order: .rodata
       subsegments:
       - [0x2EB980, snap_material_anim, anim_17]
     - start: 0x2EBAA0
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_18
-      linker_section_order: .rodata
       subsegments:
       - [0x2EBAA0, snap_material_anim, anim_18]
     - start: 0x2EBBC0
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_19
-      linker_section_order: .rodata
       subsegments:
       - [0x2EBBC0, snap_material_anim, anim_19]
     - start: 0x2EBD00
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_20
-      linker_section_order: .rodata
       subsegments:
       - [0x2EBD00, snap_material_anim, anim_20]
     - start: 0x2EBE40
       type: .data
-      dir: porygon/anim/material
+      dir: porygon/anim/material/
       name: porygon/anim/material/anim_21
-      linker_section_order: .rodata
       subsegments:
       - [0x2EBE40, snap_material_anim, anim_21]
     - start: 0x2EBF80
       type: .data
       dir: vileplume
       name: vileplume/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2EBF80]
       - { start: 0x2EBF88, type: palette, name: tex0, size: 0x20 }
@@ -5408,79 +5117,68 @@ segments:
       - { start: 0x2ED9C0, type: i4, name: tex12, flip_y: true, width: 32, height: 64 }
     - start: 0x2EDDC0
       type: .data
-      dir: vileplume/anim/model
+      dir: vileplume/anim/model/
       name: vileplume/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2EDDC0, snap_model_anim, anim_0]
     - start: 0x2EF080
       type: .data
-      dir: vileplume/anim/model
+      dir: vileplume/anim/model/
       name: vileplume/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2EF080, snap_model_anim, anim_1]
     - start: 0x2EF560
       type: .data
-      dir: vileplume/anim/model
+      dir: vileplume/anim/model/
       name: vileplume/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2EF560, snap_model_anim, anim_2]
     - start: 0x2EFC10
       type: .data
-      dir: vileplume/anim/model
+      dir: vileplume/anim/model/
       name: vileplume/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2EFC10, snap_model_anim, anim_3]
     - start: 0x2F03A0
       type: .data
-      dir: vileplume/anim/model
+      dir: vileplume/anim/model/
       name: vileplume/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2F03A0, snap_model_anim, anim_4]
     - start: 0x2F0DC0
       type: .data
-      dir: vileplume/anim/model
+      dir: vileplume/anim/model/
       name: vileplume/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x2F0DC0, snap_model_anim, anim_5]
     - start: 0x2F1AB0
       type: .data
-      dir: vileplume/anim/material
+      dir: vileplume/anim/material/
       name: vileplume/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2F1AB0, snap_material_anim, anim_0]
     - start: 0x2F1B70
       type: .data
-      dir: vileplume/anim/material
+      dir: vileplume/anim/material/
       name: vileplume/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2F1B70, snap_material_anim, anim_1]
     - start: 0x2F1C30
       type: .data
-      dir: vileplume/anim/material
+      dir: vileplume/anim/material/
       name: vileplume/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2F1C30, snap_material_anim, anim_2]
     - start: 0x2F1CF0
       type: .data
-      dir: vileplume/anim/material
+      dir: vileplume/anim/material/
       name: vileplume/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2F1CF0, snap_material_anim, anim_3]
     - start: 0x2F1DE0
       type: .data
       dir: shellder
       name: shellder/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2F1DE0]
       - { start: 0x2F1DE8, type: palette, name: tex0, size: 0x20 }
@@ -5494,23 +5192,20 @@ segments:
       - { start: 0x2F2248, type: ci4, name: tex2, flip_y: true, width: 32, height: 64 }
     - start: 0x2F2650
       type: .data
-      dir: shellder/anim/model
+      dir: shellder/anim/model/
       name: shellder/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2F2650, snap_model_anim, anim_0]
     - start: 0x2F2EA0
       type: .data
-      dir: shellder/anim/material
+      dir: shellder/anim/material/
       name: shellder/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2F2EA0, snap_material_anim, anim_0]
     - start: 0x2F2F20
       type: .data
       dir: shellder2
       name: shellder2/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2F2F20]
       - { start: 0x2F2F28, type: palette, name: tex0, size: 0x20 }
@@ -5524,23 +5219,20 @@ segments:
       - { start: 0x2F3388, type: ci4, name: tex2, flip_y: true, width: 32, height: 64 }
     - start: 0x2F3790
       type: .data
-      dir: 603/anim/model
-      name: 603/anim/model/anim_0
-      linker_section_order: .rodata
+      dir: unk603/anim/model/
+      name: unk603/anim/model/anim_0
       subsegments:
       - [0x2F3790, snap_model_anim, anim_0]
     - start: 0x2F3CE0
       type: .data
-      dir: 603/anim/model
-      name: 603/anim/model/anim_1
-      linker_section_order: .rodata
+      dir: unk603/anim/model/
+      name: unk603/anim/model/anim_1
       subsegments:
       - [0x2F3CE0, snap_model_anim, anim_1]
     - start: 0x2F42F0
       type: .data
       dir: metapod
       name: metapod/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2F42F0]
       - { start: 0x2F42F8, type: palette, name: tex0, size: 0x20 }
@@ -5568,51 +5260,44 @@ segments:
       - { start: 0x2F4EB0, type: ci4, name: tex5, flip_y: true, width: 16, height: 4 }
     - start: 0x2F4ED0
       type: .data
-      dir: metapod/anim/model
+      dir: metapod/anim/model/
       name: metapod/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2F4ED0, snap_model_anim, anim_0]
     - start: 0x2F5360
       type: .data
-      dir: metapod/anim/model
+      dir: metapod/anim/model/
       name: metapod/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2F5360, snap_model_anim, anim_1]
     - start: 0x2F55C0
       type: .data
-      dir: metapod/anim/model
+      dir: metapod/anim/model/
       name: metapod/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2F55C0, snap_model_anim, anim_2]
     - start: 0x2F5810
       type: .data
-      dir: metapod/anim/material
+      dir: metapod/anim/material/
       name: metapod/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2F5810, snap_material_anim, anim_0]
     - start: 0x2F58C0
       type: .data
-      dir: metapod/anim/material
+      dir: metapod/anim/material/
       name: metapod/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2F58C0, snap_material_anim, anim_1]
     - start: 0x2F5970
       type: .data
-      dir: metapod/anim/material
+      dir: metapod/anim/material/
       name: metapod/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2F5970, snap_material_anim, anim_2]
     - start: 0x2F5A30
       type: .data
       dir: slowpoke
       name: slowpoke/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x2F5A30]
       - { start: 0x2F5A38, type: palette, name: tex0, size: 0x20 }
@@ -5640,86 +5325,74 @@ segments:
       - { start: 0x2F6750, type: ci4, name: tex5, flip_y: true, width: 32, height: 32 }
     - start: 0x2F6950
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x2F6950, snap_model_anim, anim_0]
     - start: 0x2F7190
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x2F7190, snap_model_anim, anim_1]
     - start: 0x2F7980
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x2F7980, snap_model_anim, anim_2]
     - start: 0x2F8EE0
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x2F8EE0, snap_model_anim, anim_3]
     - start: 0x2F9480
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x2F9480, snap_model_anim, anim_4]
     - start: 0x2F9B60
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x2F9B60, snap_model_anim, anim_5]
     - start: 0x2FB770
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x2FB770, snap_model_anim, anim_6]
     - start: 0x2FCC40
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x2FCC40, snap_model_anim, anim_7]
     - start: 0x2FDFD0
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x2FDFD0, snap_model_anim, anim_8]
     - start: 0x3010C0
       type: .data
-      dir: slowpoke/anim/model
+      dir: slowpoke/anim/model/
       name: slowpoke/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x3010C0, snap_model_anim, anim_9]
     - start: 0x301D50
       type: .data
-      dir: slowpoke/anim/material
+      dir: slowpoke/anim/material/
       name: slowpoke/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x301D50, snap_material_anim, anim_0]
     - start: 0x301E50
       type: .data
       dir: slowbro
       name: slowbro/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x301E50]
       - { start: 0x301E58, type: palette, name: tex0, size: 0x20 }
@@ -5771,58 +5444,50 @@ segments:
       - { start: 0x304090, type: ci4, name: tex11, flip_y: true, width: 32, height: 32 }
     - start: 0x304290
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x304290, snap_model_anim, anim_0]
     - start: 0x304FE0
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x304FE0, snap_model_anim, anim_1]
     - start: 0x305C40
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x305C40, snap_model_anim, anim_2]
     - start: 0x307100
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x307100, snap_model_anim, anim_3]
     - start: 0x3079B0
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x3079B0, snap_model_anim, anim_4]
     - start: 0x3089B0
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x3089B0, snap_model_anim, anim_5]
     - start: 0x309B90
       type: .data
-      dir: slowbro/anim/model
+      dir: slowbro/anim/model/
       name: slowbro/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x309B90, snap_model_anim, anim_6]
     - start: 0x30AE60
       type: .data
-      dir: slowbro/anim/material
+      dir: slowbro/anim/material/
       name: slowbro/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x30AE60, snap_material_anim, anim_0]
     - { name: bss_8019AEC0, type: bss, vram: 0x8019AEC0 }
@@ -6746,7 +6411,7 @@ segments:
       - { start: 0x359450, type: ci8, name: tex_skin2, flip_y: true, width: 64, height: 32 }
     - start: 0x359C50
       type: .data
-      dir: magmar/anim/model
+      dir: magmar/anim/model/
       name: magmar/anim/model/walk
       subsegments:
       - [0x359C50, snap_model_anim, walk]
@@ -8543,7 +8208,6 @@ segments:
       type: .data
       dir: graveler
       name: graveler/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x425530]
       - { start: 0x425538, type: palette, name: tex0, size: 0x18 }
@@ -8563,107 +8227,92 @@ segments:
       - { start: 0x426210, type: ci4, name: tex3, flip_y: true, width: 32, height: 32 }
     - start: 0x426410
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x426410, snap_model_anim, anim_0]
     - start: 0x426E70
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x426E70, snap_model_anim, anim_1]
     - start: 0x427680
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x427680, snap_model_anim, anim_2]
     - start: 0x427DD0
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x427DD0, snap_model_anim, anim_3]
     - start: 0x428590
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x428590, snap_model_anim, anim_4]
     - start: 0x428DF0
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x428DF0, snap_model_anim, anim_5]
     - start: 0x429230
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x429230, snap_model_anim, anim_6]
     - start: 0x429C40
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x429C40, snap_model_anim, anim_7]
     - start: 0x429F20
       type: .data
-      dir: graveler/anim/model
+      dir: graveler/anim/model/
       name: graveler/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x429F20, snap_model_anim, anim_8]
     - start: 0x42A9B0
       type: .data
-      dir: graveler/anim/material
+      dir: graveler/anim/material/
       name: graveler/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x42A9B0, snap_material_anim, anim_0]
     - start: 0x42AA50
       type: .data
-      dir: graveler/anim/material
+      dir: graveler/anim/material/
       name: graveler/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x42AA50, snap_material_anim, anim_1]
     - start: 0x42AAD0
       type: .data
-      dir: graveler/anim/material
+      dir: graveler/anim/material/
       name: graveler/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x42AAD0, snap_material_anim, anim_2]
     - start: 0x42AB30
       type: .data
-      dir: graveler/anim/material
+      dir: graveler/anim/material/
       name: graveler/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x42AB30, snap_material_anim, anim_3]
     - start: 0x42ABB0
       type: .data
-      dir: graveler/anim/material
+      dir: graveler/anim/material/
       name: graveler/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x42ABB0, snap_material_anim, anim_4]
     - start: 0x42AC10
       type: .data
       dir: gyarados
       name: gyarados/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x42AC10]
       - { start: 0x42AC18, type: palette, name: tex0, size: 0xB8 }
@@ -8711,72 +8360,62 @@ segments:
       - { start: 0x42E098, type: ci4, name: tex10, flip_y: true, width: 16, height: 32 }
     - start: 0x42E1A0
       type: .data
-      dir: gyarados/anim/model
+      dir: gyarados/anim/model/
       name: gyarados/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x42E1A0, snap_model_anim, anim_0]
     - start: 0x42FCC0
       type: .data
-      dir: gyarados/anim/model
+      dir: gyarados/anim/model/
       name: gyarados/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x42FCC0, snap_model_anim, anim_1]
     - start: 0x4307B0
       type: .data
-      dir: gyarados/anim/model
+      dir: gyarados/anim/model/
       name: gyarados/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x4307B0, snap_model_anim, anim_2]
     - start: 0x431590
       type: .data
-      dir: gyarados/anim/model
+      dir: gyarados/anim/model/
       name: gyarados/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x431590, snap_model_anim, anim_3]
     - start: 0x432300
       type: .data
-      dir: gyarados/anim/model
+      dir: gyarados/anim/model/
       name: gyarados/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x432300, snap_model_anim, anim_4]
     - start: 0x432A60
       type: .data
-      dir: gyarados/anim/material
+      dir: gyarados/anim/material/
       name: gyarados/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x432A60, snap_material_anim, anim_0]
     - start: 0x432AF0
       type: .data
-      dir: gyarados/anim/material
+      dir: gyarados/anim/material/
       name: gyarados/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x432AF0, snap_material_anim, anim_1]
     - start: 0x432BE0
       type: .data
-      dir: gyarados/anim/material
+      dir: gyarados/anim/material/
       name: gyarados/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x432BE0, snap_material_anim, anim_2]
     - start: 0x432C70
       type: .data
-      dir: gyarados/anim/material
+      dir: gyarados/anim/material/
       name: gyarados/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x432C70, snap_material_anim, anim_3]
     - start: 0x432D60
       type: .data
       dir: staryu
       name: staryu/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x432D60]
       - { start: 0x432D68, type: palette, name: tex0, size: 0x20 }
@@ -8796,44 +8435,38 @@ segments:
       - { start: 0x433D80, type: ci8, name: tex3, flip_y: true, width: 32, height: 32 }
     - start: 0x434180
       type: .data
-      dir: staryu/anim/model
+      dir: staryu/anim/model/
       name: staryu/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x434180, snap_model_anim, anim_0]
     - start: 0x434850
       type: .data
-      dir: staryu/anim/model
+      dir: staryu/anim/model/
       name: staryu/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x434850, snap_model_anim, anim_1]
     - start: 0x434F20
       type: .data
-      dir: staryu/anim/model
+      dir: staryu/anim/model/
       name: staryu/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x434F20, snap_model_anim, anim_2]
     - start: 0x435990
       type: .data
-      dir: staryu/anim/material
+      dir: staryu/anim/material/
       name: staryu/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x435990, snap_material_anim, anim_0]
     - start: 0x435A20
       type: .data
-      dir: staryu/anim/material
+      dir: staryu/anim/material/
       name: staryu/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x435A20, snap_material_anim, anim_1]
     - start: 0x435AA0
       type: .data
       dir: geodude
       name: geodude/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x435AA0]
       - { start: 0x435AA8, type: palette, name: tex0, size: 0x20 }
@@ -8852,96 +8485,82 @@ segments:
       - [0x436750]
       - { start: 0x436758, type: ci8, name: tex3, flip_y: true, width: 32, height: 32 }
       - [0x436B58]
-      - { start: 0x438D18, type: i4, name: tex4, flip_y: true, width: 32, height: 32 }
     - start: 0x436B60
       type: .data
-      dir: geodude/anim/model
+      dir: geodude/anim/model/
       name: geodude/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x436B60, snap_model_anim, anim_0]
     - start: 0x437120
       type: .data
-      dir: geodude/anim/model
+      dir: geodude/anim/model/
       name: geodude/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x437120, snap_model_anim, anim_1]
     - start: 0x4374A0
       type: .data
-      dir: geodude/anim/model
+      dir: geodude/anim/model/
       name: geodude/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x4374A0, snap_model_anim, anim_2]
     - start: 0x437AA0
       type: .data
-      dir: geodude/anim/model
+      dir: geodude/anim/model/
       name: geodude/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x437AA0, snap_model_anim, anim_3]
     - start: 0x4380B0
       type: .data
-      dir: geodude/anim/model
+      dir: geodude/anim/model/
       name: geodude/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x4380B0, snap_model_anim, anim_4]
     - start: 0x4383C0
       type: .data
-      dir: geodude/anim/model
+      dir: geodude/anim/model/
       name: geodude/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x4383C0, snap_model_anim, anim_5]
     - start: 0x4388F0
       type: .data
-      dir: geodude/anim/material
+      dir: geodude/anim/material/
       name: geodude/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x4388F0, snap_material_anim, anim_0]
     - start: 0x4389A0
       type: .data
-      dir: geodude/anim/material
+      dir: geodude/anim/material/
       name: geodude/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x4389A0, snap_material_anim, anim_1]
     - start: 0x438A50
       type: .data
-      dir: geodude/anim/material
+      dir: geodude/anim/material/
       name: geodude/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x438A50, snap_material_anim, anim_2]
     - start: 0x438B00
       type: .data
-      dir: geodude/anim/material
+      dir: geodude/anim/material/
       name: geodude/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x438B00, snap_material_anim, anim_3]
     - start: 0x438BB0
       type: .data
-      dir: geodude/anim/material
+      dir: geodude/anim/material/
       name: geodude/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x438BB0, snap_material_anim, anim_4]
     - start: 0x438C60
       type: .data
-      dir: geodude/anim/material
+      dir: geodude/anim/material/
       name: geodude/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x438C60, snap_material_anim, anim_5]
     - start: 0x438D10
       type: .data
       dir: unk
       name: unk/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x438D10]
       - { start: 0x438D18, type: i4, name: tex0, flip_y: true, width: 32, height: 32 }
@@ -8949,7 +8568,6 @@ segments:
       type: .data
       dir: dragonite
       name: dragonite/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x438F20]
       - { start: 0x438F20, type: palette, name: tex0, size: 0x20 }
@@ -8989,51 +8607,44 @@ segments:
       - { start: 0x43B798, type: ci4, name: tex8, flip_y: true, width: 16, height: 16 }
     - start: 0x43B820
       type: .data
-      dir: dragonite/anim/model
+      dir: dragonite/anim/model/
       name: dragonite/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x43B820, snap_model_anim, anim_0]
     - start: 0x43C700
       type: .data
-      dir: dragonite/anim/model
+      dir: dragonite/anim/model/
       name: dragonite/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x43C700, snap_model_anim, anim_1]
     - start: 0x43D530
       type: .data
-      dir: dragonite/anim/model
+      dir: dragonite/anim/model/
       name: dragonite/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x43D530, snap_model_anim, anim_2]
     - start: 0x441000
       type: .data
-      dir: dragonite/anim/model
+      dir: dragonite/anim/model/
       name: dragonite/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x441000, snap_model_anim, anim_3]
     - start: 0x4416C0
       type: .data
-      dir: dragonite/anim/model
+      dir: dragonite/anim/model/
       name: dragonite/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x4416C0, snap_model_anim, anim_4]
     - start: 0x442680
       type: .data
-      dir: dragonite/anim/material
+      dir: dragonite/anim/material/
       name: dragonite/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x442680, snap_material_anim, anim_0]
     - start: 0x443F40
       type: .data
       dir: mankey
       name: mankey/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x443F40]
       - { start: 0x443F48, type: palette, name: tex0, size: 0x8 }
@@ -9097,79 +8708,68 @@ segments:
       - { start: 0x4489E8, type: ci8, name: tex14, flip_y: true, width: 32, height: 32 }
     - start: 0x448DF0
       type: .data
-      dir: mankey/anim/model
+      dir: mankey/anim/model/
       name: mankey/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x448DF0, snap_model_anim, anim_0]
     - start: 0x4498D0
       type: .data
-      dir: mankey/anim/model
+      dir: mankey/anim/model/
       name: mankey/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x4498D0, snap_model_anim, anim_1]
     - start: 0x44B090
       type: .data
-      dir: mankey/anim/model
+      dir: mankey/anim/model/
       name: mankey/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x44B090, snap_model_anim, anim_2]
     - start: 0x44C850
       type: .data
-      dir: mankey/anim/model
+      dir: mankey/anim/model/
       name: mankey/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x44C850, snap_model_anim, anim_3]
     - start: 0x44F660
       type: .data
-      dir: mankey/anim/model
+      dir: mankey/anim/model/
       name: mankey/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x44F660, snap_model_anim, anim_4]
     - start: 0x44FAA0
       type: .data
-      dir: mankey/anim/material
+      dir: mankey/anim/material/
       name: mankey/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x44FAA0, snap_material_anim, anim_0]
     - start: 0x44FB40
       type: .data
-      dir: mankey/anim/material
+      dir: mankey/anim/material/
       name: mankey/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x44FB40, snap_material_anim, anim_1]
     - start: 0x44FC00
       type: .data
-      dir: mankey/anim/material
+      dir: mankey/anim/material/
       name: mankey/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x44FC00, snap_material_anim, anim_2]
     - start: 0x44FCC0
       type: .data
-      dir: mankey/anim/material
+      dir: mankey/anim/material/
       name: mankey/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x44FCC0, snap_material_anim, anim_3]
     - start: 0x44FD80
       type: .data
-      dir: mankey/anim/material
+      dir: mankey/anim/material/
       name: mankey/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x44FD80, snap_material_anim, anim_4]
     - start: 0x44FE20
       type: .data
       dir: dratini
       name: dratini/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x44FE20]
       - { start: 0x44FE28, type: palette, name: tex0, size: 0x8 }
@@ -9201,44 +8801,38 @@ segments:
       - { start: 0x452B08, type: ci8, name: tex6, flip_y: true, width: 32, height: 64 }
     - start: 0x453310
       type: .data
-      dir: dratini/anim/model
+      dir: dratini/anim/model/
       name: dratini/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x453310, snap_model_anim, anim_0]
     - start: 0x453E40
       type: .data
-      dir: dratini/anim/model
+      dir: dratini/anim/model/
       name: dratini/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x453E40, snap_model_anim, anim_1]
     - start: 0x454120
       type: .data
-      dir: dratini/anim/model
+      dir: dratini/anim/model/
       name: dratini/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x454120, snap_model_anim, anim_2]
     - start: 0x454B60
       type: .data
-      dir: dratini/anim/material
+      dir: dratini/anim/material/
       name: dratini/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x454B60, snap_material_anim, anim_0]
     - start: 0x454C00
       type: .data
-      dir: dratini/anim/material
+      dir: dratini/anim/material/
       name: dratini/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x454C00, snap_material_anim, anim_1]
     - start: 0x454C90
       type: .data
       dir: sandshrew
       name: sandshrew/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x454C90]
       - { start: 0x454C98, type: rgba16, name: tex0, flip_y: true, width: 32, height: 16 }
@@ -9276,114 +8870,98 @@ segments:
       - { start: 0x459518, type: rgba16, name: tex16, flip_y: true, width: 32, height: 32 }
     - start: 0x459D20
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x459D20, snap_model_anim, anim_0]
     - start: 0x45A2C0
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x45A2C0, snap_model_anim, anim_1]
     - start: 0x45A880
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x45A880, snap_model_anim, anim_2]
     - start: 0x45AFF0
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x45AFF0, snap_model_anim, anim_3]
     - start: 0x45B540
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x45B540, snap_model_anim, anim_4]
     - start: 0x45CA40
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x45CA40, snap_model_anim, anim_5]
     - start: 0x45D6E0
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x45D6E0, snap_model_anim, anim_6]
     - start: 0x45E280
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x45E280, snap_model_anim, anim_7]
     - start: 0x45ECB0
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x45ECB0, snap_model_anim, anim_8]
     - start: 0x45F520
       type: .data
-      dir: sandshrew/anim/model
+      dir: sandshrew/anim/model/
       name: sandshrew/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x45F520, snap_model_anim, anim_9]
     - start: 0x45FEA0
       type: .data
-      dir: sandshrew/anim/material
+      dir: sandshrew/anim/material/
       name: sandshrew/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x45FEA0, snap_material_anim, anim_0]
     - start: 0x45FF40
       type: .data
-      dir: sandshrew/anim/material
+      dir: sandshrew/anim/material/
       name: sandshrew/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x45FF40, snap_material_anim, anim_1]
     - start: 0x460000
       type: .data
-      dir: sandshrew/anim/material
+      dir: sandshrew/anim/material/
       name: sandshrew/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x460000, snap_material_anim, anim_2]
     - start: 0x460060
       type: .data
-      dir: sandshrew/anim/material
+      dir: sandshrew/anim/material/
       name: sandshrew/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x460060, snap_material_anim, anim_3]
     - start: 0x4600D0
       type: .data
-      dir: sandshrew/anim/material
+      dir: sandshrew/anim/material/
       name: sandshrew/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x4600D0, snap_material_anim, anim_4]
     - start: 0x460130
       type: .data
       dir: sandslash
       name: sandslash/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x460130]
       - { start: 0x460138, type: palette, name: tex0, size: 0x20 }
@@ -9417,128 +8995,110 @@ segments:
       - { start: 0x461328, type: rgba16, name: tex7, flip_y: true, width: 20, height: 4 }
     - start: 0x4613D0
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x4613D0, snap_model_anim, anim_0]
     - start: 0x461FC0
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x461FC0, snap_model_anim, anim_1]
     - start: 0x462830
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x462830, snap_model_anim, anim_2]
     - start: 0x462DA0
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x462DA0, snap_model_anim, anim_3]
     - start: 0x463150
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x463150, snap_model_anim, anim_4]
     - start: 0x463830
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x463830, snap_model_anim, anim_5]
     - start: 0x464370
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x464370, snap_model_anim, anim_6]
     - start: 0x465020
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x465020, snap_model_anim, anim_7]
     - start: 0x465670
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x465670, snap_model_anim, anim_8]
     - start: 0x466090
       type: .data
-      dir: sandslash/anim/model
+      dir: sandslash/anim/model/
       name: sandslash/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x466090, snap_model_anim, anim_9]
     - start: 0x467860
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x467860, snap_material_anim, anim_0]
     - start: 0x467910
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x467910, snap_material_anim, anim_1]
     - start: 0x4679A0
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x4679A0, snap_material_anim, anim_2]
     - start: 0x467A30
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x467A30, snap_material_anim, anim_3]
     - start: 0x467AB0
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x467AB0, snap_material_anim, anim_4]
     - start: 0x467B50
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x467B50, snap_material_anim, anim_5]
     - start: 0x467C10
       type: .data
-      dir: sandslash/anim/material
+      dir: sandslash/anim/material/
       name: sandslash/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x467C10, snap_material_anim, anim_6]
     - start: 0x467C90
       type: .data
       dir: starmie
       name: starmie/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x467C90]
       - { start: 0x467C98, type: palette, name: tex0, size: 0x200 }
@@ -9558,51 +9118,44 @@ segments:
       - { start: 0x469A90, type: ci4, name: tex3, flip_y: true, width: 32, height: 28 }
     - start: 0x469C50
       type: .data
-      dir: starmie/anim/model
+      dir: starmie/anim/model/
       name: starmie/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x469C50, snap_model_anim, anim_0]
     - start: 0x46A2B0
       type: .data
-      dir: starmie/anim/model
+      dir: starmie/anim/model/
       name: starmie/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x46A2B0, snap_model_anim, anim_1]
     - start: 0x46A910
       type: .data
-      dir: starmie/anim/model
+      dir: starmie/anim/model/
       name: starmie/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x46A910, snap_model_anim, anim_2]
     - start: 0x46B120
       type: .data
-      dir: starmie/anim/material
+      dir: starmie/anim/material/
       name: starmie/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x46B120, snap_material_anim, anim_0]
     - start: 0x46B210
       type: .data
-      dir: starmie/anim/material
+      dir: starmie/anim/material/
       name: starmie/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x46B210, snap_material_anim, anim_1]
     - start: 0x46B280
       type: .data
-      dir: starmie/anim/material
+      dir: starmie/anim/material/
       name: starmie/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x46B280, snap_material_anim, anim_2]
     - start: 0x46B2F0
       type: .data
       dir: goldeen
       name: goldeen/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x46B2F0]
       - { start: 0x46B2F8, type: palette, name: tex0, size: 0x200 }
@@ -9648,51 +9201,44 @@ segments:
       - { start: 0x46FE88, type: ci4, name: tex10, flip_y: true, width: 32, height: 32 }
     - start: 0x470090
       type: .data
-      dir: goldeen/anim/model
+      dir: goldeen/anim/model/
       name: goldeen/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x470090, snap_model_anim, anim_0]
     - start: 0x470860
       type: .data
-      dir: goldeen/anim/model
+      dir: goldeen/anim/model/
       name: goldeen/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x470860, snap_model_anim, anim_1]
     - start: 0x471310
       type: .data
-      dir: goldeen/anim/model
+      dir: goldeen/anim/model/
       name: goldeen/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x471310, snap_model_anim, anim_2]
     - start: 0x471C40
       type: .data
-      dir: goldeen/anim/material
+      dir: goldeen/anim/material/
       name: goldeen/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x471C40, snap_material_anim, anim_0]
     - start: 0x471D10
       type: .data
-      dir: goldeen/anim/material
+      dir: goldeen/anim/material/
       name: goldeen/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x471D10, snap_material_anim, anim_1]
     - start: 0x471DC0
       type: .data
-      dir: goldeen/anim/material
+      dir: goldeen/anim/material/
       name: goldeen/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x471DC0, snap_material_anim, anim_2]
     - start: 0x471E90
       type: .data
       dir: squirtle
       name: squirtle/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x471E90]
       - { start: 0x471E98, type: palette, name: tex0, size: 0x200 }
@@ -9756,191 +9302,164 @@ segments:
       - { start: 0x474900, type: ci4, name: tex14, flip_y: true, width: 32, height: 32 }
     - start: 0x474B00
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x474B00, snap_model_anim, anim_0]
     - start: 0x474FA0
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x474FA0, snap_model_anim, anim_1]
     - start: 0x475430
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x475430, snap_model_anim, anim_2]
     - start: 0x475B50
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x475B50, snap_model_anim, anim_3]
     - start: 0x4767F0
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x4767F0, snap_model_anim, anim_4]
     - start: 0x477950
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x477950, snap_model_anim, anim_5]
     - start: 0x477CF0
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x477CF0, snap_model_anim, anim_6]
     - start: 0x4785E0
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x4785E0, snap_model_anim, anim_7]
     - start: 0x478840
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x478840, snap_model_anim, anim_8]
     - start: 0x4795C0
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x4795C0, snap_model_anim, anim_9]
     - start: 0x479F00
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_10
-      linker_section_order: .rodata
       subsegments:
       - [0x479F00, snap_model_anim, anim_10]
     - start: 0x47A8B0
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_11
-      linker_section_order: .rodata
       subsegments:
       - [0x47A8B0, snap_model_anim, anim_11]
     - start: 0x47B670
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_12
-      linker_section_order: .rodata
       subsegments:
       - [0x47B670, snap_model_anim, anim_12]
     - start: 0x47BF70
       type: .data
-      dir: squirtle/anim/model
+      dir: squirtle/anim/model/
       name: squirtle/anim/model/anim_13
-      linker_section_order: .rodata
       subsegments:
       - [0x47BF70, snap_model_anim, anim_13]
     - start: 0x47C880
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x47C880, snap_material_anim, anim_0]
     - start: 0x47C8F0
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x47C8F0, snap_material_anim, anim_1]
     - start: 0x47C980
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x47C980, snap_material_anim, anim_2]
     - start: 0x47CA10
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x47CA10, snap_material_anim, anim_3]
     - start: 0x47CA90
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x47CA90, snap_material_anim, anim_4]
     - start: 0x47CB10
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x47CB10, snap_material_anim, anim_5]
     - start: 0x47CB90
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x47CB90, snap_material_anim, anim_6]
     - start: 0x47CBF0
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x47CBF0, snap_material_anim, anim_7]
     - start: 0x47CC70
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_8
-      linker_section_order: .rodata
       subsegments:
       - [0x47CC70, snap_material_anim, anim_8]
     - start: 0x47CD00
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_9
-      linker_section_order: .rodata
       subsegments:
       - [0x47CD00, snap_material_anim, anim_9]
     - start: 0x47CDA0
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_10
-      linker_section_order: .rodata
       subsegments:
       - [0x47CDA0, snap_material_anim, anim_10]
     - start: 0x47CE20
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_11
-      linker_section_order: .rodata
       subsegments:
       - [0x47CE20, snap_material_anim, anim_11]
     - start: 0x47CEC0
       type: .data
-      dir: squirtle/anim/material
+      dir: squirtle/anim/material/
       name: squirtle/anim/material/anim_12
-      linker_section_order: .rodata
       subsegments:
       - [0x47CEC0, snap_material_anim, anim_12]
     - { name: bss_80186AF0, type: bss, vram: 0x80186AF0 }
@@ -10308,7 +9827,6 @@ segments:
       type: .data
       dir: mew
       name: mew/textures
-      linker_section_order: .rodata
       subsegments:
       - [0x4D8CE0]
       - { start: 0x4D8CE8, type: palette, name: tex0, size: 0x200 }
@@ -10370,114 +9888,98 @@ segments:
       - { start: 0x4DEBB0, type: ci4, name: tex14, flip_y: true, width: 32, height: 32 }
     - start: 0x4DEDB0
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x4DEDB0, snap_model_anim, anim_0]
     - start: 0x4DFAD0
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x4DFAD0, snap_model_anim, anim_1]
     - start: 0x4E13C0
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x4E13C0, snap_model_anim, anim_2]
     - start: 0x4E1F30
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x4E1F30, snap_model_anim, anim_3]
     - start: 0x4E4100
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x4E4100, snap_model_anim, anim_4]
     - start: 0x4E5410
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x4E5410, snap_model_anim, anim_5]
     - start: 0x4E7C70
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x4E7C70, snap_model_anim, anim_6]
     - start: 0x4E8CC0
       type: .data
-      dir: mew/anim/model
+      dir: mew/anim/model/
       name: mew/anim/model/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x4E8CC0, snap_model_anim, anim_7]
     - start: 0x4EB8A0
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_0
-      linker_section_order: .rodata
       subsegments:
       - [0x4EB8A0, snap_material_anim, anim_0]
     - start: 0x4EB970
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_1
-      linker_section_order: .rodata
       subsegments:
       - [0x4EB970, snap_material_anim, anim_1]
     - start: 0x4EBA60
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_2
-      linker_section_order: .rodata
       subsegments:
       - [0x4EBA60, snap_material_anim, anim_2]
     - start: 0x4EBB40
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_3
-      linker_section_order: .rodata
       subsegments:
       - [0x4EBB40, snap_material_anim, anim_3]
     - start: 0x4EBC10
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_4
-      linker_section_order: .rodata
       subsegments:
       - [0x4EBC10, snap_material_anim, anim_4]
     - start: 0x4EBCD0
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_5
-      linker_section_order: .rodata
       subsegments:
       - [0x4EBCD0, snap_material_anim, anim_5]
     - start: 0x4EBDD0
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_6
-      linker_section_order: .rodata
       subsegments:
       - [0x4EBDD0, snap_material_anim, anim_6]
     - start: 0x4EBED0
       type: .data
-      dir: mew/anim/material
+      dir: mew/anim/material/
       name: mew/anim/material/anim_7
-      linker_section_order: .rodata
       subsegments:
       - [0x4EBED0, snap_material_anim, anim_7]
     - { name: bss_80139C30, type: bss, vram: 0x80139C30 }

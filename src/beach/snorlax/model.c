@@ -1,13 +1,13 @@
 #include "common.h"
 
-extern u8 snorlax_tex_8801799F8[];
+extern u8 snorlax_tex_801799F8[];
 extern u8 snorlax_tex_80179A20_png[];
-extern u8 snorlax_tex_880179C28[];
+extern u8 snorlax_tex_80179C28[];
 extern u8 snorlax_tex_80179C50_png[];
-extern u8 snorlax_tex_88017A058[];
-extern u8 snorlax_tex_88017AEB8[];
+extern u8 snorlax_tex_8017A058[];
+extern u8 snorlax_tex_8017AEB8[];
 extern u8 snorlax_tex_8017B318_png[];
-extern u8 snorlax_tex_88017B2F0[];
+extern u8 snorlax_tex_8017B2F0[];
 extern u8 snorlax_tex_8017B720_png[];
 extern u8 snorlax_tex_8017A080_png[];
 extern u8 snorlax_tex_8017A288_png[];
