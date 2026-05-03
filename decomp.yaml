@@ -6,12 +6,12 @@ versions:
   fullname: US
   sha1: edc7c49cc568c045fe48be0d18011c30f393cbaf
   paths:
-    target: "/home/ethteck/repos/pokemonsnap/pokemonsnap.z64"
-    compiled_target: "/home/ethteck/repos/pokemonsnap/build/pokemonsnap.z64"
-    asm: "/home/ethteck/repos/pokemonsnap/asm"
-    nonmatchings: "/home/ethteck/repos/pokemonsnap/asm/nonmatchings"
-    map: "/home/ethteck/repos/pokemonsnap/build/pokemonsnap.map"
-    elf: "/home/ethteck/repos/pokemonsnap/build/pokemonsnap.elf"
+    target: "pokemonsnap.z64"
+    compiled_target: "build/pokemonsnap.z64"
+    asm: "asm"
+    nonmatchings: "asm/nonmatchings"
+    map: "build/pokemonsnap.map"
+    elf: "build/pokemonsnap.elf"
     build_dir: "build"
 tools:
   decompme:
