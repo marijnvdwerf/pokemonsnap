@@ -2650,7 +2650,8 @@ segments:
       - { start: 0x326C88, type: rgba16, name: skybox, flip_y: true, width: 64, height: 32 }
       - [0x327C88, vtx, skybox]
       - [0x328068, gfx, skybox]
-    - start: 0x328190
+    - [0x328190, .data, world/world_gfx]
+    - start: 0x328290
       type: .data
       name: world/block0
       dir: block0
@@ -10244,8 +10245,8 @@ segments:
   - [0xAFD3A4, bin, audio/seq/AFD3A4]
   - [0xAFD494, bin, audio/seq/AFD494]
   - [0xAFDCD8, bin, audio/seq/AFDCD8]
-  - [0xAFDDC4, bin, audio/seq/AFDDC4] # Unknown size for now
-  - [0xAFDDC8, bin]
+  - [0xAFDDC4, bin, audio/seq/AFDDC4]
+  - [0xAFEED8, bin, AFEED8] # padding
 
   # Audio banks and wave tables
   - [0xAFEEE0, bin, audio/bank1]
