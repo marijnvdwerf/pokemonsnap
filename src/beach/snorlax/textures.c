@@ -86,6 +86,6 @@ u8 snorlax_tex_8017B318_png[] = {
 };
 
 __ALIGNER
-u8 snorlax_tex_8017B720[] = {
+u8 snorlax_tex_8017B720_png[] = {
 #include "assets/beach/snorlax/tex12.png.bin.c"
 };
