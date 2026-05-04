@@ -40,7 +40,7 @@ Texture** zapdos_hd_materials[] = {
 };
 
 u8* zapdos_hd_part14_mat0_textures[] = {
-    zapdos_tex_80182BC0,
+    zapdos_tex_80182BC0_png,
     zapdos_tex_80182FF0,
     NULL,
 };
