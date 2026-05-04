@@ -184,11 +184,11 @@ typedef struct AnimLinePtr2 {
             val1                                                    \
         }                                                           \
     }
-#define asSetBlock_2f(n, param1, val1, param2, val2)                           \
-    {                                                                          \
+#define asSetBlock_2f(n, param1, val1, param2, val2)                         \
+    {                                                                        \
         ((ANIM_CMD_SET_VALUE_LAST << 25) | ((param1 | param2) << 15) | n), { \
-            val1, val2                                                         \
-        }                                                                      \
+            val1, val2                                                       \
+        }                                                                    \
     }
 #define asSetBlock_3f(n, param1, val1, param2, val2, param3, val3)                    \
     {                                                                                 \
@@ -240,7 +240,7 @@ typedef struct AnimLinePtr2 {
         }                                                                                 \
     }
 #define asSet_5f(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5)          \
-    {                                                                                               \
+    {                                                                                              \
         ((ANIM_CMD_SET_VALUE << 25) | ((param1 | param2 | param3 | param4 | param5) << 15) | n), { \
             val1, val2, val3, val4, val5                                                           \
         }                                                                                          \
@@ -271,16 +271,16 @@ typedef struct AnimLinePtr2 {
         }                                                                                       \
     }
 #define asSetWithRateBlock_8f(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4) \
-    {                                                                                                                 \
-        ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4) << 15) | n), {              \
-            val1, rate1, val2, rate2, val3, rate3, val4, rate4                                                        \
-        }                                                                                                             \
+    {                                                                                                                \
+        ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4) << 15) | n), {             \
+            val1, rate1, val2, rate2, val3, rate3, val4, rate4                                                       \
+        }                                                                                                            \
     }
 #define asSetWithRateBlock_10f(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5) \
-    {                                                                                                                                       \
-        ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5) << 15) | n), {                           \
-            val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5                                                                 \
-        }                                                                                                                                   \
+    {                                                                                                                                      \
+        ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5) << 15) | n), {                          \
+            val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5                                                                \
+        }                                                                                                                                  \
     }
 #define asSetWithRateBlock_12f(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5, param6, val6, rate6) \
     {                                                                                                                                                           \
@@ -292,10 +292,10 @@ typedef struct AnimLinePtr2 {
 #define asSetWithRateBlock_16(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5, param6, val6, rate6, param7, val7, rate7, param8, val8, rate8) static AnimLine16 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8) << 15) | n), { val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5, val6, rate6, val7, rate7, val8, rate8 } }
 #define asSetWithRateBlock_18(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5, param6, val6, rate6, param7, val7, rate7, param8, val8, rate8, param9, val9, rate9) static AnimLine18 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), { val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5, val6, rate6, val7, rate7, val8, rate8, val9, rate9 } }
 #define asSetWithRateBlock_18f(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5, param6, val6, rate6, param7, val7, rate7, param8, val8, rate8, param9, val9, rate9) \
-    {                                                                                                                                                                                                                         \
-        ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), {                                                                        \
-            val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5, val6, rate6, val7, rate7, val8, rate8, val9, rate9                                                                                               \
-        }                                                                                                                                                                                                                     \
+    {                                                                                                                                                                                                                          \
+        ((ANIM_CMD_SET_VALUE_WITH_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), {                                                                          \
+            val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5, val6, rate6, val7, rate7, val8, rate8, val9, rate9                                                                                                \
+        }                                                                                                                                                                                                                      \
     }
 
 #define asSetWithRate_2(n, param1, val1, rate1) static AnimLine2 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_WITH_RATE << 25) | ((param1) << 15) | n), { val1, rate1 } }
@@ -344,13 +344,13 @@ typedef struct AnimLinePtr2 {
     }
 #define asSetWithRate_14f(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5, param6, val6, rate6, param7, val7, rate7) \
     {                                                                                                                                                                           \
-        ((ANIM_CMD_SET_VALUE_WITH_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7) << 15) | n), {                                                 \
+        ((ANIM_CMD_SET_VALUE_WITH_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7) << 15) | n), {                                                  \
             val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5, val6, rate6, val7, rate7                                                                           \
         }                                                                                                                                                                       \
     }
 #define asSetWithRate_16f(n, param1, val1, rate1, param2, val2, rate2, param3, val3, rate3, param4, val4, rate4, param5, val5, rate5, param6, val6, rate6, param7, val7, rate7, param8, val8, rate8) \
     {                                                                                                                                                                                                \
-        ((ANIM_CMD_SET_VALUE_WITH_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8) << 15) | n), {                                                             \
+        ((ANIM_CMD_SET_VALUE_WITH_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8) << 15) | n), {                                                              \
             val1, rate1, val2, rate2, val3, rate3, val4, rate4, val5, rate5, val6, rate6, val7, rate7, val8, rate8                                                                                   \
         }                                                                                                                                                                                            \
     }
@@ -405,18 +405,18 @@ typedef struct AnimLinePtr2 {
         }                                                                                                                  \
     }
 #define asSetZeroRateBlock_7(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7) static AnimLine7 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_ZERO_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7) << 15) | n), { val1, val2, val3, val4, val5, val6, val7 } }
-#define asSetZeroRateBlock_7f(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7) \
-    {                                                                                                                              \
+#define asSetZeroRateBlock_7f(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7)  \
+    {                                                                                                                               \
         ((ANIM_CMD_SET_VALUE_ZERO_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7) << 15) | n), { \
-            val1, val2, val3, val4, val5, val6, val7                                                                               \
-        }                                                                                                                          \
+            val1, val2, val3, val4, val5, val6, val7                                                                                \
+        }                                                                                                                           \
     }
 #define asSetZeroRateBlock_8(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7, param8, val8) static AnimLine8 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_ZERO_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8) << 15) | n), { val1, val2, val3, val4, val5, val6, val7, val8 } }
 #define asSetZeroRateBlock_9(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7, param8, val8, param9, val9) static AnimLine9 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_ZERO_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), { val1, val2, val3, val4, val5, val6, val7, val8, val9 } }
 #define asSetZeroRateBlock_9f(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7, param8, val8, param9, val9) \
     {                                                                                                                                                          \
-        ((ANIM_CMD_SET_VALUE_ZERO_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), {         \
-            val1, val2, val3, val4, val5, val6, val7, val8, val9                                                                                              \
+        ((ANIM_CMD_SET_VALUE_ZERO_RATE_LAST << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), {          \
+            val1, val2, val3, val4, val5, val6, val7, val8, val9                                                                                               \
         }                                                                                                                                                      \
     }
 
@@ -473,14 +473,14 @@ typedef struct AnimLinePtr2 {
 #define asSetZeroRate_8f(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7, param8, val8) \
     {                                                                                                                                       \
         ((ANIM_CMD_SET_VALUE_ZERO_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8) << 15) | n), {     \
-            val1, val2, val3, val4, val5, val6, val7, val8                                                                                 \
+            val1, val2, val3, val4, val5, val6, val7, val8                                                                                  \
         }                                                                                                                                   \
     }
 #define asSetZeroRate_9f(n, param1, val1, param2, val2, param3, val3, param4, val4, param5, val5, param6, val6, param7, val7, param8, val8, param9, val9) \
-    {                                                                                                                                                      \
-        ((ANIM_CMD_SET_VALUE_ZERO_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), {           \
-            val1, val2, val3, val4, val5, val6, val7, val8, val9                                                                                           \
-        }                                                                                                                                                  \
+    {                                                                                                                                                     \
+        ((ANIM_CMD_SET_VALUE_ZERO_RATE << 25) | ((param1 | param2 | param3 | param4 | param5 | param6 | param7 | param8 | param9) << 15) | n), {          \
+            val1, val2, val3, val4, val5, val6, val7, val8, val9                                                                                          \
+        }                                                                                                                                                 \
     }
 
 #define asSetAfterBlock_1(n, param1, val1) static AnimLine1 __ANIMLINENAME = { ((ANIM_CMD_SET_VALUE_AFTER_LAST << 25) | ((param1) << 15) | n), { val1 } }
@@ -658,11 +658,11 @@ typedef struct AnimLinePtr2 {
     }
 
 #define asSetExtraAfterBlock_1(n, param1, r1, g1, b1, a1) static AnimLineI1 __ANIMLINENAME = { ((ANIM_CMD_SET_EXTRA_VALUE_AFTER_LAST << 25) | ((param1) << 15) | n), { (r1 << 24) | (g1 << 16) | (b1 << 8) | a1 } }
-#define asSetExtraAfterBlock_1f(n, param1, r1, g1, b1, a1)                              \
-    {                                                                                    \
-        ((ANIM_CMD_SET_EXTRA_VALUE_AFTER_LAST << 25) | ((param1) << 15) | n), {          \
-            (r1 << 24) | (g1 << 16) | (b1 << 8) | a1                                    \
-        }                                                                                \
+#define asSetExtraAfterBlock_1f(n, param1, r1, g1, b1, a1)                      \
+    {                                                                           \
+        ((ANIM_CMD_SET_EXTRA_VALUE_AFTER_LAST << 25) | ((param1) << 15) | n), { \
+            (r1 << 24) | (g1 << 16) | (b1 << 8) | a1                            \
+        }                                                                       \
     }
 #define asSetExtraAfterBlock_2(n, param1, r1, g1, b1, a1, param2, r2, g2, b2, a2) static AnimLineI2 __ANIMLINENAME = { ((ANIM_CMD_SET_EXTRA_VALUE_AFTER_LAST << 25) | ((param1 | param2) << 15) | n), { (r1 << 24) | (g1 << 16) | (b1 << 8) | a1, (r2 << 24) | (g2 << 16) | (b2 << 8) | a2 } }
 

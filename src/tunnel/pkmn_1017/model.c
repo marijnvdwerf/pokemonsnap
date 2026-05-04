@@ -12,7 +12,6 @@ extern u8 tunnel_world_tex_8014D120[];
 extern u8 tunnel_world_tex_8014D148_png[];
 extern u8 tunnel_world_tex_8014CAC8[];
 
-
 extern Vtx pkmn_1017_vtx[];
 
 #include "assets/tunnel/pkmn_1017/draw.gfx.inc.c"
