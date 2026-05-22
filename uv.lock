@@ -444,7 +444,7 @@ requires-dist = [
     { name = "pypng", specifier = ">=0.20220715.0" },
     { name = "requests", specifier = ">=2.32.5" },
     { name = "spimdisasm", specifier = ">=1.39.0" },
-    { name = "splat64", extras = ["mips"], specifier = ">=0.39.1" },
+    { name = "splat64", extras = ["mips"], specifier = ">=0.40.1" },
 ]
 
 [[package]]
@@ -733,7 +733,7 @@ wheels = [
 
 [[package]]
 name = "splat64"
-version = "0.39.1"
+version = "0.40.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama" },
@@ -742,9 +742,9 @@ dependencies = [
     { name = "pyyaml" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/47/c2/70e1ec4e33b8eb2621e7f67a24853cb58fa07d88d6e67a945f1b4204ce87/splat64-0.39.1.tar.gz", hash = "sha256:34d9dbe11c996e904f1536c142d9e8824f8a95c6accb11b92a1fc3574449eb5b", size = 152456, upload-time = "2026-03-29T17:12:59.068Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/20/5c/7b11ae1cc5475ae474c3ff821d16c133b284391c37dc8eae4b845bfe92a3/splat64-0.40.1.tar.gz", hash = "sha256:74335d1e86892f18e8d67a05ccaaf4dd1addf8dcc76762d5386779c355755b5b", size = 153724, upload-time = "2026-05-19T12:30:33.029Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6e/88/4016af1b7493389c1514c81315558edb559224093f30b73e13ec1058ad54/splat64-0.39.1-py3-none-any.whl", hash = "sha256:3c928cc54d28222a77c5200d2d0ad19a87958ad937363757f25b203214953bc7", size = 119964, upload-time = "2026-03-29T17:12:57.753Z" },
+    { url = "https://files.pythonhosted.org/packages/37/b1/0f1befd2a47c975c3184f22acc7649643e580b517b1ed41a14d5103efa88/splat64-0.40.1-py3-none-any.whl", hash = "sha256:2ca75075e15353f68e33aa3a535ef6cea9778b695a5ae462991378e9bd2d0791", size = 120999, upload-time = "2026-05-19T12:30:31.79Z" },
 ]
 
 [package.optional-dependencies]
